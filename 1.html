@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블루커뮤니케이션즈 | 7년의 기록, 광고비가 절반만 일하는 이유</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <style>
+        :root {
+            --primary-color: #0055ff;
+            --text-dark: #1d1d1f;
+            --text-medium: #424245;
+            --bg-dark: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --accent-gray: #2c2c2e;
+        }
+
+        body {
+            font-family: "Pretendard Variable", Pretendard, sans-serif;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin: 0; padding: 0;
+            word-break: keep-all;
+            background-color: #fff;
+        }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+        header { padding: 140px 0 80px; text-align: center; }
+        .header-tag { font-size: 14px; color: var(--primary-color); font-weight: 700; letter-spacing: 2px; margin-bottom: 20px; display: block; }
+        h1 { font-size: 3rem; font-weight: 800; line-height: 1.3; letter-spacing: -0.04em; margin-bottom: 20px; }
+
+        section { padding: 100px 0; border-bottom: 1px solid #eee; }
+        h2 { font-size: 2rem; font-weight: 800; margin-bottom: 40px; color: var(--text-dark); }
+        p { font-size: 1.15rem; color: var(--text-medium); margin-bottom: 28px; text-align: left; }
+
+        .highlight-box {
+            background-color: #f9f9f9;
+            padding: 48px; border-radius: 24px; margin: 60px 0;
+            border-left: 8px solid var(--primary-color);
+            font-size: 1.35rem; font-weight: 700; line-height: 1.6;
+        }
+
+        .premium-black-section { 
+            background: var(--bg-dark); color: #fff;
+            padding: 120px 24px; border-radius: 48px; margin: 80px 0;
+            text-align: left;
+        }
+        .premium-black-section h2 { color: #fff; text-align: center; font-size: 2.8rem; margin-bottom: 24px; }
+        .section-desc { text-align: center; color: #86868b; margin-bottom: 80px; font-size: 1.25rem; }
+        
+        .tag-container { display: flex; justify-content: center; gap: 12px; margin-bottom: 80px; flex-wrap: wrap; }
+        .tag-capsule { background: var(--accent-gray); padding: 12px 24px; border-radius: 100px; font-weight: 600; font-size: 1rem; border: 1px solid rgba(255,255,255,0.1); color: #fff; }
+
+        .message-card { background: var(--card-bg); padding: 50px; border-radius: 32px; margin-bottom: 80px; border: 1px solid rgba(255,255,255,0.05); }
+        .message-card p { color: #d2d2d7; font-size: 1.2rem; }
+        .message-card p strong { color: #fff; font-size: 1.5rem; display: block; margin-bottom: 20px; }
+
+        .deficiency-item { margin-bottom: 100px; }
+        .deficiency-item h3 { font-size: 1.8rem; color: var(--primary-color); margin-bottom: 32px; display: flex; align-items: center; font-weight: 800; }
+        .deficiency-item h3::before { content: ''; width: 10px; height: 10px; background: var(--primary-color); border-radius: 50%; margin-right: 20px; }
+        .deficiency-item p { color: #a1a1a6; font-size: 1.2rem; line-height: 1.9; }
+
+        .image-placeholder { width: 100%; height: 480px; background: #f2f2f7; border-radius: 32px; display: flex; align-items: center; justify-content: center; margin: 50px 0; color: #aaa; }
+        
+        footer.cta-section { text-align: center; padding: 140px 0; background: #000; color: #fff; border-radius: 64px 64px 0 0; }
+        .btn { display: inline-block; background: var(--primary-color); color: #fff; padding: 24px 72px; border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 1.4rem; transition: 0.3s; }
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,85,255,0.4); }
+
+        .process-section { padding: 80px 0; background: #fff; }
+        .process-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 60px; }
+        .process-card { background: #f8f9fa; padding: 40px 30px; border-radius: 24px; position: relative; text-align: left; }
+        .process-card .step-num { font-size: 4rem; font-weight: 900; color: rgba(0, 85, 255, 0.1); position: absolute; top: 10px; right: 20px; }
+        .process-card h3 { font-size: 1.4rem; color: var(--primary-color); margin-bottom: 20px; z-index: 1; position: relative; }
+        .process-card p { font-size: 1rem; color: var(--text-medium); line-height: 1.7; margin-bottom: 0; }
+        .process-card ul { padding-left: 18px; margin-top: 15px; font-size: 0.95rem; color: var(--text-dark); }
+        .process-card ul li { margin-bottom: 8px; }
+
+        .mid-cta { text-align: center; padding: 40px 0; }
+
+        @media (max-width: 768px) { 
+            h1 { font-size: 2.2rem; } 
+            .premium-black-section h2 { font-size: 2rem; } 
+            .main-message-box { padding: 32px; }
+            .process-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="container">
+    <span class="header-tag">BLUE COMMUNICATIONS</span>
+    <h1>7년의 기록: 왜 여러분의 광고비는<br>절반만 일하고 있을까요?</h1>
+</header>
+
+<div class="container">
+    <section>
+        <div class="image-placeholder">[이미지: 2018년 현장 기록 및 1억 투자 데이터 그래프]</div>
+        <h2>1. 2018년 여름, 1억 원을 태우며 발견한 '기묘한 격차'</h2>
+        <p>블루커뮤니케이션즈의 시작은 화려한 사무실이 아니라 땀 냄새 나는 현장이었습니다. 오직 '입소문'만으로 7년을 성장해오며 우리는 기묘한 현상을 목격했습니다. 똑같이 월 1,000만 원의 광고비를 쓰는데, 누구는 매출이 폭발하고 누구는 현상 유지조차 버거운 <strong>'성과적 격차'</strong>였습니다.</p>
+        <p>처음에는 광고 세팅의 차이인 줄 알았습니다. 하지만 차마 광고주의 돈을 쓸 수 없어 <strong>우리 돈 1억 원을 직접 지출하며 실험해 본 결과, 진짜 범인은 따로 있었습니다.</strong> 바로 광고가 도달하는 <strong>'그릇(홈페이지)'</strong>이 검색자의 <strong>'구매 의도'</strong>를 담아내지 못하고 새어나가고 있었던 것입니다.</p>
+    </section>
+
+    <section>
+        <h2>2. 우리가 '검색' 마케팅에 그토록 집착했던 이유</h2>
+        <p>우리가 검색창에 무언가를 입력할 때를 떠올려 보세요. "배고파"라고 생각만 하는 게 아니라 직접 타이핑을 한다는 건, 이미 <strong>'나는 지금 무언가를 살 준비가 됐다'</strong>는 강력한 의도가 있다는 뜻입니다. 사려는 마음이 꽉 찬 사람 앞에 우리 브랜드가 나타나기만 하면 바로 구매로 이어졌기에, 지난 7년 동안 저희는 이 <strong>'확실한 효율'</strong>에 집착했습니다.</p>
+        <div class="highlight-box">
+            "하지만 최근, 이 견고했던 시장에 거대한 균열이 생기고 있습니다. 단순히 키워드만 등록하면 되는 시대는 지났습니다."
+        </div>
+    </section>
+
+    <section>
+        <h2>3. 네이버의 바뀐 규칙: "이제 전교 1등 딱지는 사라집니다"</h2>
+        <p>광고주분들이 흔히 신뢰의 척도로 여겼던 품질지수가 2026년 상반기 소멸됩니다. 대신 네이버는 <strong>[검색광고 최적화 지수]</strong>를 도입합니다. 예전에는 홈페이지가 부실해도 입찰가만 잘 관리하면 명당을 줬지만, 이제 네이버의 AI는 여러분의 홈페이지를 사람처럼 꼼꼼하게 읽어봅니다.</p>
+        <p><strong>"이 홈페이지는 손님이 찾는 질문에 진짜 제대로 된 정답을 내놓고 있는가?"</strong>를 따져서 점수를 주겠다는 거죠. 이 최적화 지수가 높아야만 남들보다 훨씬 적은 돈을 쓰고도 가장 좋은 자리에 설 수 있습니다.</p>
+    </section>
+
+    <section>
+        <h2>4. 검색의 시대가 가고, '질문'의 시대가 오고 있습니다</h2>
+        <p>진짜 무서운 변화는 여기서 시작됩니다. 이제 사람들은 단어만 던지지 않습니다. AI에게 친구처럼 물어봅니다. "내일 데이트할 건데 분위기 좋은 식당 좀 추천해줘"라고요. 우리는 여전히 SNS를 보며 정보를 탐색하지만, 검색창에 단어를 치는 일은 줄어들고 있습니다.</p>
+        <p>이것이 우리가 SEO(검색 최적화)와 GEO(생성 엔진 최적화)를 강조하는 이유입니다. AI가 사용자의 질문을 받았을 때, 수만 개 브랜드 중 <strong>여러분을 '최고의 정답'으로 지목하게 만드는 기술.</strong> 그 기술은 결국 AI가 좋아하는 구조로 홈페이지를 빚는 것에서 시작됩니다.</p>
+    </section>
+
+    <div class="premium-black-section">
+        <h2>오늘의 매출과 내일의 생존,<br>두 마리 토끼를 잡으세요</h2>
+        <p class="section-desc">비즈니스의 복잡함을 단순화하고, 성과를 내기 위한 결정입니다.</p>
+        
+        <div class="tag-container">
+            <span class="tag-capsule">[오늘] 검색 최적화(SEO)</span>
+            <span class="tag-capsule">[내일] 질문 최적화(GEO)</span>
+            <span class="tag-capsule">[전략] 최적화 엔진 구축</span>
+        </div>
+
+        <div class="message-card">
+            <p><strong>"우리는 단순히 예쁜 디자인을 만들지 않습니다."</strong></p>
+            <p>7년간 랜딩페이지를 만들며 '팔리는 로직'을 연구해온 우리는, 네이버의 AI가 어떤 구조에 열광하고 어떤 콘텐츠를 '신뢰'로 분류하는지 현장에서 뼈저리게 학습했습니다. 광고비를 아껴주고, AI가 가장 먼저 추천하는 전략적인 <strong>[최적화 엔진]</strong>을 빚습니다.</p>
+        </div>
+
+        <div class="deficiency-item">
+            <h3>1. 홈페이지 최적화 정밀 진단</h3>
+            <p>현재 여러분의 홈페이지가 네이버 AI와 차세대 생성형 엔진(GEO)에게 어떤 평가를 받을지 전문가가 직접 심층 해부합니다. SEO 구조부터 사용자 경험(UX)의 병목 구간까지, 광고비가 새어나가는 구멍을 찾아냅니다.</p>
+        </div>
+
+        <div class="deficiency-item">
+            <h3>2. 비즈니스 리빌딩 전략 제안</h3>
+            <p>진단 결과를 바탕으로 광고비를 절감하면서도 AI의 선택을 받을 수 있는 홈페이지 개편 전략을 수립합니다. '방법 B'를 발굴하고, 유입된 고객이 결제까지 막힘없이 이어지는 설계도를 제안합니다.</p>
+        </div>
+
+        <div class="deficiency-item" style="margin-bottom: 0;">
+            <h3>3. 최적화 엔진 구축 및 파트너십</h3>
+            <p>직접 빚은 홈페이지로 광고 효율을 극대화합니다. 단순히 세팅에서 끝나는 것이 아니라 재고와 CS 상황까지 동기화하여, 사업의 호흡에 맞춰 광고의 속도를 조절하는 진짜 파트너십을 시작합니다.</p>
+        </div>
+    </div>
+
+    <section class="process-section">
+        <div class="container">
+            <h2 style="text-align: center;">어떤 과정을 거치게 되나요?</h2>
+            <div class="process-grid">
+                <div class="process-card">
+                    <span class="step-num">01</span>
+                    <h3>최적화 진단</h3>
+                    <p>신청서와 데이터를 기반으로 비즈니스를 72시간 동안 해부합니다.</p>
+                    <ul>
+                        <li>SEO/GEO 적합도 판정</li>
+                        <li>광고비 누수 구간 탐지</li>
+                    </ul>
+                </div>
+                
+                <div class="process-card">
+                    <span class="step-num">02</span>
+                    <h3>리빌딩 전략</h3>
+                    <p>찾아낸 '격차'를 어떻게 파고들지 구체적인 실행 방안을 설계합니다.</p>
+                    <ul>
+                        <li>최적화 지표 개선 설계</li>
+                        <li>전환 중심 퍼널 구축</li>
+                    </ul>
+                </div>
+                
+                <div class="process-card">
+                    <span class="step-num">03</span>
+                    <h3>엔진 구축</h3>
+                    <p>실제로 팔리는 구조를 만듭니다. 1억을 태워 얻은 문법을 이식합니다.</p>
+                    <ul>
+                        <li>AI 친화적 콘텐츠 제작</li>
+                        <li>고전환 상세페이지 최적화</li>
+                    </ul>
+                </div>
+                
+                <div class="process-card">
+                    <span class="step-num">04</span>
+                    <h3>비즈니스 동기화</h3>
+                    <p>사업의 상황에 맞춰 광고를 조절하는 진짜 파트너십을 유지합니다.</p>
+                    <ul>
+                        <li>데이터 기반 광고 운영</li>
+                        <li>정기 전략 고도화</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="mid-cta" style="padding-bottom: 80px;">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmCQUWkPj0jw9IpXWScxah8TatBRysxT1-81asV5Z5nEDR4Q/viewform" class="btn">우리 브랜드 비효율 진단 신청하기</a>
+    </div>
+</div>
+
+<footer class="cta-section">
+    <div class="container">
+        <h2>"조금은 느리고 까다로울 수 있습니다."</h2>
+        <p>하지만 사라지는 규칙 뒤에 머무는 대신,<br>남들이 보지 못하는 틈에서 미래를 선점할 준비가 되셨나요?</p>
+    </div>
+</footer>
+
+</body>
+</html>
