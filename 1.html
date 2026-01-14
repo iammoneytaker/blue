@@ -56,6 +56,14 @@
         .message-card p { color: #d2d2d7; font-size: 1.2rem; }
         .message-card p strong { color: #fff; font-size: 1.5rem; display: block; margin-bottom: 20px; }
 
+        /* 핵심 보완 섹션: 기술/콘텐츠 상세 */
+        .tech-spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+        .spec-item { background: rgba(255,255,255,0.03); padding: 32px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); }
+        .spec-item h4 { color: var(--primary-color); font-size: 1.3rem; margin-top: 0; margin-bottom: 16px; }
+        .spec-item ul { list-style: none; padding: 0; margin: 0; }
+        .spec-item ul li { color: #a1a1a6; font-size: 1rem; margin-bottom: 10px; padding-left: 18px; position: relative; }
+        .spec-item ul li::before { content: '→'; position: absolute; left: 0; color: var(--primary-color); }
+
         .deficiency-item { margin-bottom: 100px; }
         .deficiency-item h3 { font-size: 1.8rem; color: var(--primary-color); margin-bottom: 32px; display: flex; align-items: center; font-weight: 800; }
         .deficiency-item h3::before { content: ''; width: 10px; height: 10px; background: var(--primary-color); border-radius: 50%; margin-right: 20px; }
@@ -81,7 +89,7 @@
         @media (max-width: 768px) { 
             h1 { font-size: 2.2rem; } 
             .premium-black-section h2 { font-size: 2rem; } 
-            .main-message-box { padding: 32px; }
+            .tech-spec-grid { grid-template-columns: 1fr; }
             .process-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -98,7 +106,7 @@
         <div class="image-placeholder">[이미지: 2018년 현장 기록 및 1억 투자 데이터 그래프]</div>
         <h2>1. 2018년 여름, 1억 원을 태우며 발견한 '기묘한 격차'</h2>
         <p>블루커뮤니케이션즈의 시작은 화려한 사무실이 아니라 땀 냄새 나는 현장이었습니다. 오직 '입소문'만으로 7년을 성장해오며 우리는 기묘한 현상을 목격했습니다. 똑같이 월 1,000만 원의 광고비를 쓰는데, 누구는 매출이 폭발하고 누구는 현상 유지조차 버거운 <strong>'성과적 격차'</strong>였습니다.</p>
-        <p>처음에는 광고 세팅의 차이인 줄 알았습니다. 하지만 차마 광고주의 돈을 쓸 수 없어 <strong>우리 돈 1억 원을 직접 지출하며 실험해 본 결과, 진짜 범인은 따로 있었습니다.</strong> 바로 광고가 도달하는 <strong>'그릇(홈페이지)'</strong>이 검색자의 <strong>'구매 의도'</strong>를 담아내지 못하고 새어나가고 있었던 것입니다.</p>
+        <p>처음에는 광고 세팅의 차인 줄 알았습니다. 하지만 차마 광고주의 돈을 쓸 수 없어 <strong>우리 돈 1억 원을 직접 지출하며 실험해 본 결과, 진짜 범인은 따로 있었습니다.</strong> 바로 광고가 도달하는 <strong>'그릇(홈페이지)'</strong>이 검색자의 <strong>'구매 의도'</strong>를 담아내지 못하고 새어나가고 있었던 것입니다.</p>
     </section>
 
     <section>
@@ -115,40 +123,42 @@
         <p><strong>"이 홈페이지는 손님이 찾는 질문에 진짜 제대로 된 정답을 내놓고 있는가?"</strong>를 따져서 점수를 주겠다는 거죠. 이 최적화 지수가 높아야만 남들보다 훨씬 적은 돈을 쓰고도 가장 좋은 자리에 설 수 있습니다.</p>
     </section>
 
-    <section>
-        <h2>4. 검색의 시대가 가고, '질문'의 시대가 오고 있습니다</h2>
-        <p>진짜 무서운 변화는 여기서 시작됩니다. 이제 사람들은 단어만 던지지 않습니다. AI에게 친구처럼 물어봅니다. "내일 데이트할 건데 분위기 좋은 식당 좀 추천해줘"라고요. 우리는 여전히 SNS를 보며 정보를 탐색하지만, 검색창에 단어를 치는 일은 줄어들고 있습니다.</p>
-        <p>이것이 우리가 SEO(검색 최적화)와 GEO(생성 엔진 최적화)를 강조하는 이유입니다. AI가 사용자의 질문을 받았을 때, 수만 개 브랜드 중 <strong>여러분을 '최고의 정답'으로 지목하게 만드는 기술.</strong> 그 기술은 결국 AI가 좋아하는 구조로 홈페이지를 빚는 것에서 시작됩니다.</p>
-    </section>
-
     <div class="premium-black-section">
-        <h2>오늘의 매출과 내일의 생존,<br>두 마리 토끼를 잡으세요</h2>
-        <p class="section-desc">비즈니스의 복잡함을 단순화하고, 성과를 내기 위한 결정입니다.</p>
+        <h2>광고비를 아껴주는<br>[최적화 엔진]의 실체</h2>
+        <p class="section-desc">단순히 예쁜 페이지가 아닙니다. AI와 고객을 동시에 설득하는 정교한 설계도입니다.</p>
         
-        <div class="tag-container">
-            <span class="tag-capsule">[오늘] 검색 최적화(SEO)</span>
-            <span class="tag-capsule">[내일] 질문 최적화(GEO)</span>
-            <span class="tag-capsule">[전략] 최적화 엔진 구축</span>
+        <div class="tech-spec-grid">
+            <div class="spec-item">
+                <h4>Technical SEO (구조적 설계)</h4>
+                <ul>
+                    <li><strong>초고속 로딩 환경:</strong> 0.1초의 차이가 이탈률 20%를 결정합니다. 서버 응답 속도 최적화 및 이미지 차세대 포맷 이식.</li>
+                    <li><strong>시맨틱 태그 구조화:</strong> 네이버 AI와 생성형 엔진(GEO)이 홈페이지의 주제를 즉각 이해하도록 HTML5 구조를 표준화합니다.</li>
+                    <li><strong>데이터 하이라이팅:</strong> 검색 결과에서 우리 브랜드가 가장 눈에 띄도록 스키마 마크업(JSON-LD)을 적용합니다.</li>
+                </ul>
+            </div>
+            <div class="spec-item">
+                <h4>Psychological Design (심리적 설계)</h4>
+                <ul>
+                    <li><strong>구매 심리 카피라이팅:</strong> 고객의 문제(Problem)를 건드리고 해결책(Solution)으로 유도하는 PAS/AIDA 프레임워크 기반 설계.</li>
+                    <li><strong>신뢰 자산 배치:</strong> 뇌가 가장 먼저 반응하는 '사회적 증거'와 '권위'의 요소를 고객의 시선 흐름(F-Pattern)에 맞춰 배치합니다.</li>
+                    <li><strong>전환 유도(CTA) 최적화:</strong> 단순히 '구매하기'가 아닙니다. 거절할 수 없는 제안을 통해 클릭을 '결정'하게 만듭니다.</li>
+                </ul>
+            </div>
         </div>
 
-        <div class="message-card">
-            <p><strong>"우리는 단순히 예쁜 디자인을 만들지 않습니다."</strong></p>
-            <p>7년간 랜딩페이지를 만들며 '팔리는 로직'을 연구해온 우리는, 네이버의 AI가 어떤 구조에 열광하고 어떤 콘텐츠를 '신뢰'로 분류하는지 현장에서 뼈저리게 학습했습니다. 광고비를 아껴주고, AI가 가장 먼저 추천하는 전략적인 <strong>[최적화 엔진]</strong>을 빚습니다.</p>
+        <div class="message-card" style="margin-top: 60px;">
+            <p><strong>"AI는 구조에 열광하고, 고객은 문장에 반응합니다."</strong></p>
+            <p>우리는 이 두 가지가 만나는 지점을 7년간 1억 원의 수업료를 내며 찾아냈습니다. 이 기술적 기반이 없는 홈페이지에 광고비를 붓는 것은 밑 빠진 독에 물을 붓는 것과 같습니다.</p>
         </div>
 
         <div class="deficiency-item">
             <h3>1. 홈페이지 최적화 정밀 진단</h3>
-            <p>현재 여러분의 홈페이지가 네이버 AI와 차세대 생성형 엔진(GEO)에게 어떤 평가를 받을지 전문가가 직접 심층 해부합니다. SEO 구조부터 사용자 경험(UX)의 병목 구간까지, 광고비가 새어나가는 구멍을 찾아냅니다.</p>
-        </div>
-
-        <div class="deficiency-item">
-            <h3>2. 비즈니스 리빌딩 전략 제안</h3>
-            <p>진단 결과를 바탕으로 광고비를 절감하면서도 AI의 선택을 받을 수 있는 홈페이지 개편 전략을 수립합니다. '방법 B'를 발굴하고, 유입된 고객이 결제까지 막힘없이 이어지는 설계도를 제안합니다.</p>
+            <p>현재 여러분의 홈페이지가 네이버 AI와 차세대 생성형 엔진(GEO)에게 어떤 평가를 받을지 전문가가 직접 심층 해부합니다. 기술적 SEO 점수부터 사용자 경험(UX)의 병목 구간까지, 광고비가 새어나가는 구멍을 찾아냅니다.</p>
         </div>
 
         <div class="deficiency-item" style="margin-bottom: 0;">
-            <h3>3. 최적화 엔진 구축 및 파트너십</h3>
-            <p>직접 빚은 홈페이지로 광고 효율을 극대화합니다. 단순히 세팅에서 끝나는 것이 아니라 재고와 CS 상황까지 동기화하여, 사업의 호흡에 맞춰 광고의 속도를 조절하는 진짜 파트너십을 시작합니다.</p>
+            <h3>2. 비즈니스 리빌딩 전략 제안</h3>
+            <p>진단 결과를 바탕으로 광고비를 절감하면서도 AI의 선택을 받을 수 있는 홈페이지 개편 전략을 수립합니다. 유입된 고객이 결제까지 막힘없이 이어지는 고전환 상세페이지 설계도를 제안합니다.</p>
         </div>
     </div>
 
@@ -161,7 +171,7 @@
                     <h3>최적화 진단</h3>
                     <p>신청서와 데이터를 기반으로 비즈니스를 72시간 동안 해부합니다.</p>
                     <ul>
-                        <li>SEO/GEO 적합도 판정</li>
+                        <li>SEO/GEO 적합도 및 로딩 속도 측정</li>
                         <li>광고비 누수 구간 탐지</li>
                     </ul>
                 </div>
@@ -172,7 +182,7 @@
                     <p>찾아낸 '격차'를 어떻게 파고들지 구체적인 실행 방안을 설계합니다.</p>
                     <ul>
                         <li>최적화 지표 개선 설계</li>
-                        <li>전환 중심 퍼널 구축</li>
+                        <li>전환 중심 심리 퍼널 구축</li>
                     </ul>
                 </div>
                 
@@ -181,8 +191,8 @@
                     <h3>엔진 구축</h3>
                     <p>실제로 팔리는 구조를 만듭니다. 1억을 태워 얻은 문법을 이식합니다.</p>
                     <ul>
-                        <li>AI 친화적 콘텐츠 제작</li>
-                        <li>고전환 상세페이지 최적화</li>
+                        <li>표준 시맨틱 마크업 작업</li>
+                        <li>고전환 카피라이팅 적용</li>
                     </ul>
                 </div>
                 
