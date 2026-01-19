@@ -3,152 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Agency Process</title>
+    <title>Blue Comms | SkyTrigger Strategy</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
     <style>
         :root {
-            --accent: #3b82f6; /* 일렉트릭 블루 */
-            --bg-dark: #0a0a0c;
-            --card-dark: #16161a;
-            --text-gray: #a1a1aa;
+            --bg: #050507;
+            --accent: #3b82f6;
+            --sub-accent: #00d4ff;
+            --card-bg: #111115;
+            --text-gray: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard', sans-serif; }
-        body { 
-            background-color: var(--bg-dark); 
-            color: #ffffff; 
-            padding: 100px 20px; 
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
+        body { background: var(--bg); color: #fff; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        .container { max-width: 1200px; margin: 0 auto; }
+        /* Typography */
+        h2 { font-size: clamp(32px, 5vw, 42px); font-weight: 800; letter-spacing: -2px; line-height: 1.2; }
+        .highlight { color: var(--accent); }
 
-        /* Title Section */
-        .header { margin-bottom: 80px; }
-        .header .label { 
-            display: inline-block; color: var(--accent); font-weight: 700; font-size: 14px; 
-            letter-spacing: 2px; margin-bottom: 16px; text-transform: uppercase;
-        }
-        .header h2 { 
-            font-size: clamp(32px, 5vw, 48px); font-weight: 800; letter-spacing: -2px; line-height: 1.1;
-        }
-        .header h2 span { color: var(--text-gray); }
+        /* Hero */
+        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; position: relative; }
+        .hero .label { font-size: 14px; font-weight: 700; color: var(--accent); letter-spacing: 2px; margin-bottom: 20px; }
+        .hero p { font-size: 18px; color: var(--text-gray); margin-top: 24px; max-width: 600px; }
 
-        /* Grid System */
-        .process-grid { 
-            display: grid; 
-            gap: 20px; 
-        }
+        /* Philosophy Section */
+        .section { padding: 120px 0; border-top: 1px solid var(--border); }
+        .philosophy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .philosophy-text h3 { font-size: 28px; margin-bottom: 20px; }
 
-        /* PC Layout (Horizontal) */
-        @media (min-width: 1024px) {
-            .process-grid { grid-template-columns: repeat(4, 1fr); }
-        }
+        /* Data Bento Grid */
+        .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 60px; }
+        .bento-item { background: var(--card-bg); padding: 40px; border: 1px solid var(--border); border-radius: 4px; transition: 0.3s; }
+        .bento-item:hover { border-color: var(--accent); }
+        .bento-item .stat { font-size: 48px; font-weight: 900; color: var(--sub-accent); display: block; margin-bottom: 10px; }
+        .bento-item h4 { font-size: 20px; margin-bottom: 15px; }
+        .bento-item p { font-size: 14px; color: var(--text-gray); font-weight: 300; }
 
-        /* Card Style */
-        .step-card {
-            background: var(--card-dark);
-            padding: 40px;
-            border-radius: 2px; /* 대행사 느낌은 가끔 아주 각진게 힙함 */
-            border: 1px solid #27272a;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            position: relative;
-            cursor: default;
-        }
+        /* Process Section */
+        .process-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); margin-top: 60px; }
+        .process-item { background: var(--bg); padding: 40px 30px; }
+        .process-item .step { font-size: 12px; font-weight: 800; color: var(--accent); margin-bottom: 20px; display: block; }
+        .process-item h5 { font-size: 18px; margin-bottom: 15px; }
+        .process-item p { font-size: 13px; color: var(--text-gray); }
 
-        .step-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
-            background: #1c1c21;
-        }
+        /* Synergy Section (Branding + Performance) */
+        .synergy-box { background: var(--card-bg); padding: 60px; border-radius: 20px; text-align: center; position: relative; overflow: hidden; }
+        .synergy-box::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%); }
+        .synergy-content { position: relative; z-index: 1; }
 
-        .step-num {
-            font-size: 14px; font-weight: 700; color: var(--accent);
-            display: block; margin-bottom: 30px; opacity: 0.8;
-        }
-
-        .icon-box {
-            font-size: 32px; margin-bottom: 20px; filter: grayscale(1);
-            transition: filter 0.3s ease;
-        }
-        .step-card:hover .icon-box { filter: grayscale(0); }
-
-        .content h3 { font-size: 20px; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.5px; }
-        .content p { font-size: 15px; color: var(--text-gray); font-weight: 300; }
-
-        /* Result Footer */
-        .footer-banner {
-            margin-top: 60px; padding-top: 40px;
-            border-top: 1px solid #27272a;
-            display: flex; justify-content: space-between; align-items: flex-end;
-            flex-wrap: wrap; gap: 20px;
-        }
-        .footer-banner h4 { font-size: 20px; font-weight: 600; color: #fff; }
-        .footer-banner .cta-line { color: var(--accent); font-weight: 800; font-size: 18px; }
-
-        /* Mobile specific adjustments */
-        @media (max-width: 767px) {
-            .header { text-align: left; }
-            .step-card { padding: 30px; }
+        @media (max-width: 960px) {
+            .philosophy-grid, .bento-grid, .process-list { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <header class="header">
-        <span class="label">Our Methodology</span>
-        <h2>High Performance<br><span>Operation Process</span></h2>
-    </header>
+    <section class="hero">
+        <span class="label">SKYTRIGGER STRATEGY</span>
+        <h1>기내에서 시작되는 전환 스토리,<br>오프라인과 퍼포먼스의 <span class="highlight">블루오션</span></h1>
+        <p>단순 노출로 끝나는 마케팅은 잊으세요. 브랜드 가치와 실질적인 성과를 동시에 실현하는 하이브리드 플로우를 제안합니다.</p>
+    </section>
 
-    <div class="process-grid">
-        <div class="step-card">
-            <span class="step-num">01 / EXPOSURE</span>
-            <div class="icon-box">🚀</div>
-            <div class="content">
-                <h3>프리미엄 매체 노출</h3>
-                <p>기내·공항 등 고관여 타겟 접점에서 브랜드 신뢰를 선점합니다.</p>
+    <section class="section">
+        <div class="philosophy-grid">
+            <div class="philosophy-text">
+                <h3>단순 노출은 마케팅이 아닙니다.<br><span class="highlight">행동을 유도하는 흐름</span>이 핵심입니다.</h3>
+                <p>기존의 '보는 광고'를 넘어, 기내/공항의 프리미엄 매체와 온라인 광고를 유기적으로 연결하여 실제 구매 전환까지 이어지는 정밀한 설계를 제공합니다.</p>
+            </div>
+            <div style="background: var(--card-bg); padding: 40px; border-radius: 10px; border: 1px solid var(--accent);">
+                <div style="font-size: 12px; color: var(--accent); margin-bottom: 20px;">PERFORMANCE INSIGHT</div>
+                <div style="font-size: 24px; font-weight: 700; margin-bottom: 10px;">98% Captive Rate</div>
+                <div style="height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px;">
+                    <div style="width: 98%; height: 100%; background: var(--accent);"></div>
+                </div>
+                <p style="font-size: 13px; color: var(--text-gray); margin-top: 15px;">한정된 좌석, 정해진 시간 속에서 모든 승객이 매체를 접하게 되는 독보적인 강제 노출 환경을 활용합니다.</p>
             </div>
         </div>
 
-        <div class="step-card">
-            <span class="step-num">02 / SEGMENT</span>
-            <div class="icon-box">🎯</div>
-            <div class="content">
-                <h3>데이터 타겟 세분화</h3>
-                <p>실제 구매 가능성이 높은 잠재 고객 데이터를 정교하게 분류합니다.</p>
+        <div class="bento-grid">
+            <div class="bento-item">
+                <span class="stat">High-End</span>
+                <h4>선별된 타겟</h4>
+                <p>보그, GQ 등 하이엔드 브랜드가 투자하는 이유입니다. 이미 구매 성향과 소비 여력이 검증된 고객층을 공략합니다.</p>
+            </div>
+            <div class="bento-item">
+                <span class="stat">92%</span>
+                <h4>구매력 중심</h4>
+                <p>대한항공/LCC 승객 등 가성비와 프리미엄 소비 성향이 뚜렷한 타겟을 세분화하여 광고 효율을 극대화합니다.</p>
+            </div>
+            <div class="bento-item">
+                <span class="stat">24/7</span>
+                <h4>독점적 노출</h4>
+                <p>이탈할 곳 없는 기내 환경에서의 노출은 일반 온라인 매체 대비 3배 이상의 높은 집중도를 만들어냅니다.</p>
             </div>
         </div>
+    </section>
 
-        <div class="step-card">
-            <span class="step-num">03 / CONNECT</span>
-            <div class="icon-box">⛓️</div>
-            <div class="content">
-                <h3>온·오프라인 연동</h3>
-                <p>매체간 단절 없는 사용자 경험을 설계하여 리타겟팅 효율을 높입니다.</p>
+    <section class="section">
+        <h2 style="text-align: center; margin-bottom: 20px;">체계적인 4단계 프로세스</h2>
+        <p style="text-align: center; color: var(--text-gray); margin-bottom: 60px;">최적의 전환 성과를 위해 스카이트리거는 이렇게 움직입니다.</p>
+        
+        <div class="process-list">
+            <div class="process-item">
+                <span class="step">STEP 01</span>
+                <h5>프리미엄 노출</h5>
+                <p>기내·공항 등 오프라인 채널을 통한 초기 신뢰 확보</p>
+            </div>
+            <div class="process-item">
+                <span class="step">STEP 02</span>
+                <h5>데이터 세분화</h5>
+                <p>승객 특성별 정교한 카테고리 군 설정을 통한 타겟 매칭</p>
+            </div>
+            <div class="process-item">
+                <span class="step">STEP 03</span>
+                <h5>퍼포먼스 연동</h5>
+                <p>온·오프라인을 잇는 리타겟팅 및 광고 전환 설계</p>
+            </div>
+            <div class="process-item">
+                <span class="step">STEP 04</span>
+                <h5>구매 전환 완성</h5>
+                <p>랜딩페이지 및 CTA 최적화로 실질 수치 증명</p>
             </div>
         </div>
+    </section>
 
-        <div class="step-card">
-            <span class="step-num">04 / CONVERT</span>
-            <div class="icon-box">📈</div>
-            <div class="content">
-                <h3>구매 전환 완성</h3>
-                <p>최종 액션을 유도하는 데이터 최적화로 퍼포먼스를 증명합니다.</p>
+    <section class="section">
+        <div class="synergy-box">
+            <div class="synergy-content">
+                <h2>브랜딩과 퍼포먼스,<br><span class="highlight">두 축이 만나는 지점</span></h2>
+                <p style="max-width: 700px; margin: 30px auto; color: var(--text-gray);">
+                    단순한 브랜딩도, 단순한 퍼포먼스 마케팅도 아닙니다. 
+                    항공사 기내 매체의 신뢰도와 데이터 기반 퍼포먼스의 정밀함을 결합한 혁신적인 마케팅 패러다임을 경험하세요.
+                </p>
+                <div style="margin-top: 40px;">
+                    <a href="#" style="background: var(--accent); color: white; padding: 18px 40px; border-radius: 4px; text-decoration: none; font-weight: 700;">전략 제안서 요청하기 →</a>
+                </div>
             </div>
         </div>
-    </div>
-
-    <footer class="footer-banner">
-        <div>
-            <h4>압도적인 결과로 증명합니다.</h4>
-        </div>
-        <div class="cta-line">
-            Build for Performance →
-        </div>
-    </footer>
+    </section>
 </div>
+
+<footer style="padding: 100px 0; border-top: 1px solid var(--border); text-align: center; color: #444; font-size: 13px;">
+    <p>주식회사 BLUE COMMUNICATIONS | 성과 중심 마케팅의 시작</p>
+</footer>
 
 </body>
 </html>
