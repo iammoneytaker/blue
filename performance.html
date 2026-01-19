@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>블루컴즈 퍼포먼스 마케팅</title>
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .accordion-item.active .accordion-content { max-height: 200px; }
+        .accordion-item.active svg { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="bg-white text-slate-900 font-sans leading-snug">
+
+    <section class="bg-[#002B5B] text-white p-8 pt-12">
+        <div class="max-w-md mx-auto">
+            <h2 class="text-blue-400 font-bold text-xs tracking-widest mb-2 uppercase">Performance Marketing</h2>
+            <h1 class="text-2xl font-black leading-tight mb-4 italic">
+                “성과는 설계되고,<br>전환으로 증명됩니다.”
+            </h1>
+            <p class="text-sm text-blue-100/70 font-medium">
+                클릭만 많은 광고는 의미 없습니다.<br>
+                우리는 <span class="text-white font-bold underline decoration-blue-500 underline-offset-4">전환이 일어나는 광고</span>를 만듭니다.
+            </p>
+        </div>
+    </section>
+
+    <main class="max-w-md mx-auto">
+        <div class="p-6 bg-slate-50 border-b border-slate-100">
+            <p class="text-[15px] font-bold text-slate-700 leading-relaxed">
+                블루컴즈는 '전환, 문의, 구매, 예약'이라는<br>
+                <span class="text-blue-600 font-extrabold text-lg">실제 액션을 설계</span>합니다.
+            </p>
+        </div>
+
+        <section class="py-8">
+            <div class="px-6 flex justify-between items-end mb-4">
+                <h3 class="font-black text-lg">매체별 전략</h3>
+                <span class="text-[10px] text-slate-400 font-bold">옆으로 밀어서 보기 →</span>
+            </div>
+            
+            <div class="flex overflow-x-auto no-scrollbar gap-4 px-6">
+                <div class="min-w-[260px] bg-white border border-slate-200 p-5 rounded-2xl shadow-sm">
+                    <div class="w-10 h-10 bg-[#03C75A] text-white rounded-lg flex items-center justify-center font-black mb-4 text-xl">N</div>
+                    <h4 class="font-extrabold text-slate-800 mb-1">네이버 검색광고</h4>
+                    <p class="text-[11px] text-blue-600 font-bold mb-3">"국내 검색 1위, 의도 기반 고객 선점"</p>
+                    <ul class="text-[12px] text-slate-500 space-y-1">
+                        <li>• 수요 기반 키워드 중심 운영</li>
+                        <li>• 지역, 연령, 성별, 기기 타겟팅</li>
+                        <li>• 병원, 용달, 학원, 렌터카 등 추천</li>
+                    </ul>
+                </div>
+                <div class="min-w-[260px] bg-white border border-slate-200 p-5 rounded-2xl shadow-sm">
+                    <div class="w-10 h-10 bg-slate-100 text-blue-600 rounded-lg flex items-center justify-center font-black mb-4 text-xl">G</div>
+                    <h4 class="font-extrabold text-slate-800 mb-1">구글 광고</h4>
+                    <p class="text-[11px] text-blue-600 font-bold mb-3">"검색부터 유튜브까지 전 생태계 활용"</p>
+                    <ul class="text-[12px] text-slate-500 space-y-1">
+                        <li>• GDN 확장 및 유튜브 TrueView 연동</li>
+                        <li>• AI 자동 입찰 및 리마케팅 최적화</li>
+                    </ul>
+                </div>
+                <div class="min-w-[260px] bg-white border border-slate-200 p-5 rounded-2xl shadow-sm">
+                    <div class="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center font-black mb-4 text-xl">f</div>
+                    <h4 class="font-extrabold text-slate-800 mb-1">Meta 광고</h4>
+                    <p class="text-[11px] text-blue-600 font-bold mb-3">"감성으로 끌고, 전환으로 이끈다"</p>
+                    <ul class="text-[12px] text-slate-500 space-y-1">
+                        <li>• 관심사 기반 정교한 타겟팅</li>
+                        <li>• 카페, 유아브랜드, D2C 적합</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="p-6 bg-slate-50">
+            <h3 class="font-black text-lg mb-4">퍼포먼스 전략 차별점</h3>
+            <div class="space-y-2">
+                <div class="accordion-item bg-white border border-slate-200 rounded-xl overflow-hidden" onclick="toggleAccordion(this)">
+                    <button class="w-full p-4 flex justify-between items-center">
+                        <span class="text-sm font-bold">01. 콘텐츠/랜딩 동시 설계</span>
+                        <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content px-4 pb-4 text-xs text-slate-500 leading-relaxed">
+                        채널 특성에 맞춰 광고와 랜딩페이지를 하나의 흐름으로 기획하여 이탈률을 최소화합니다.
+                    </div>
+                </div>
+                <div class="accordion-item bg-white border border-slate-200 rounded-xl overflow-hidden" onclick="toggleAccordion(this)">
+                    <button class="w-full p-4 flex justify-between items-center">
+                        <span class="text-sm font-bold">02. 전환 측정 구조 세팅</span>
+                        <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content px-4 pb-4 text-xs text-slate-500">
+                        GA4, GTM 기반의 전환 추적 시스템을 구축하여 모든 마케팅 활동을 데이터 수치화합니다.
+                    </div>
+                </div>
+                <div class="accordion-item bg-white border border-slate-200 rounded-xl overflow-hidden" onclick="toggleAccordion(this)">
+                    <button class="w-full p-4 flex justify-between items-center">
+                        <span class="text-sm font-bold">03. 퍼포먼스 핵심 공식</span>
+                        <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content px-4 pb-4">
+                        <div class="bg-blue-600 text-white p-3 rounded-lg text-center font-black">
+                            클릭 × 랜딩 × 콘텐츠
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="p-6">
+            <h3 class="font-black text-lg mb-6">실제 광고 성과 예시</h3>
+            <div class="grid grid-cols-2 gap-3">
+                <div class="bg-blue-50 p-4 rounded-2xl border border-blue-100">
+                    <p class="text-[10px] font-bold text-blue-600 uppercase mb-1">병의원</p>
+                    <p class="text-sm font-bold text-slate-800 mb-2">예약 문의</p>
+                    <p class="text-xl font-black text-blue-700">3.5배↑</p>
+                </div>
+                <div class="bg-indigo-50 p-4 rounded-2xl border border-indigo-100">
+                    <p class="text-[10px] font-bold text-indigo-600 uppercase mb-1">렌터카</p>
+                    <p class="text-sm font-bold text-slate-800 mb-2">단가 대비 노출</p>
+                    <p class="text-xl font-black text-indigo-700">4배↑</p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 col-span-2 flex justify-between items-center">
+                    <div>
+                        <p class="text-[10px] font-bold text-slate-500 uppercase mb-1">프랜차이즈</p>
+                        <p class="text-sm font-bold text-slate-800">계약 전환율</p>
+                    </div>
+                    <p class="text-2xl font-black text-slate-900">8.9%</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="p-8 bg-slate-900 text-slate-500 text-[10px] text-center">
+            <p class="font-bold text-white mb-2 uppercase tracking-widest">blue-comms</p>
+            <p>경기도 의정부시 신흥로 126, 201호 | 1877-7522</p>
+            <p class="mt-4 opacity-50 italic">© 2026 BLUE COMMUNICATIONS Inc.</p>
+        </footer>
+    </main>
+
+    <div class="fixed bottom-6 right-6">
+        <button class="bg-blue-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center font-black text-[10px] leading-tight text-center">
+            상담<br>문의
+        </button>
+    </div>
+
+    <script>
+        function toggleAccordion(element) {
+            const items = document.querySelectorAll('.accordion-item');
+            items.forEach(item => {
+                if (item === element) {
+                    item.classList.toggle('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

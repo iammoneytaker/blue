@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블루컴즈 바이럴 마케팅 - 성과 비교 버전</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .slider-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+        }
+        .slider-container::-webkit-scrollbar { display: none; }
+        .slider-item {
+            flex: 0 0 85%;
+            scroll-snap-align: center;
+            margin-right: 15px;
+        }
+        
+        /* 성과 카드 스타일 */
+        .case-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #f1f5f9;
+        }
+        .case-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.92); /* 가독성을 위해 살짝 더 밝게 조정 */
+        }
+        .case-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 듀얼 차트 스타일 */
+        .chart-label {
+            font-size: 10px;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+        .bar-before {
+            height: 12px;
+            background-color: #cbd5e1; /* 연회색 */
+            border-radius: 4px;
+            transition: width 1s ease-out;
+        }
+        .bar-after {
+            height: 18px;
+            background: linear-gradient(90deg, #2E6FF2, #0046FF);
+            border-radius: 4px;
+            transition: width 1s ease-out;
+            box-shadow: 0 2px 4px rgba(46, 111, 242, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800">
+
+    <section class="p-6 py-12">
+        <h3 class="text-xl font-bold mb-8 text-center text-gray-900">성과 예시</h3>
+        
+        <div class="case-card mb-8 p-6 shadow-md" style="background-image: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=500');">
+            <div class="case-content">
+                <div class="flex items-center gap-3 mb-5">
+                    <div class="w-10 h-10 bg-[#2E6FF2] flex items-center justify-center rounded-xl text-white text-xl">🏥</div>
+                    <span class="font-bold text-lg text-slate-800">A피부과</span>
+                </div>
+                
+                <ul class="text-[13px] text-slate-600 space-y-1.5 mb-6 leading-relaxed">
+                    <li>• 브랜드 블로그 주 2건 운영 + 카페 후기 확산</li>
+                    <li>• "OO피부과 여드름치료" 검색 시 3건 이상 노출</li>
+                </ul>
+
+                <div class="space-y-4">
+                    <div class="text-[#2E6FF2] font-bold text-base mb-1">예약전환율 약 2.1배 증가</div>
+                    
+                    <div class="space-y-3">
+                        <div>
+                            <div class="chart-label text-slate-400">진행 전</div>
+                            <div class="w-full bg-slate-100 rounded-full h-[12px]">
+                                <div class="bar-before" style="width: 40%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="chart-label text-[#2E6FF2]">AFTER 블루컴즈</div>
+                            <div class="w-full bg-slate-100 rounded-full h-[18px]">
+                                <div class="bar-after flex items-center justify-end px-2" style="width: 85%;">
+                                    <span class="text-[9px] text-white font-black italic">UP!</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-card p-6 shadow-md" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=500');">
+            <div class="case-content">
+                <div class="flex items-center gap-3 mb-5">
+                    <div class="w-10 h-10 bg-[#2E6FF2] flex items-center justify-center rounded-xl text-white text-xl">🚚</div>
+                    <span class="font-bold text-lg text-slate-800">B이사 업체</span>
+                </div>
+                
+                <ul class="text-[13px] text-slate-600 space-y-1.5 mb-6 leading-relaxed">
+                    <li>• 지역 맘카페 후기 8건 업로드 + 플레이스 저장 유도</li>
+                    <li>• "OO이사 후기" 등 핵심 키워드 1페이지 유지</li>
+                </ul>
+
+                <div class="space-y-4">
+                    <div class="text-[#2E6FF2] font-bold text-base mb-1">월 평균 30건 이상 문의 유입</div>
+                    
+                    <div class="space-y-3">
+                        <div>
+                            <div class="chart-label text-slate-400">기존 유입량</div>
+                            <div class="w-full bg-slate-100 rounded-full h-[12px]">
+                                <div class="bar-before" style="width: 25%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="chart-label text-[#2E6FF2]">AFTER 블루컴즈</div>
+                            <div class="w-full bg-slate-100 rounded-full h-[18px]">
+                                <div class="bar-after flex items-center justify-end px-2" style="width: 90%;">
+                                    <span class="text-[9px] text-white font-black italic">HOT!</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><section class="p-6 py-12 bg-white">
+    <h3 class="text-xl font-bold mb-8 text-center text-slate-900">실제 광고 성과 예시</h3>
+    
+    <div class="case-card mb-8 p-6 shadow-md" style="background-image: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=500');">
+        <div class="case-content">
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-10 h-10 bg-[#2E6FF2] flex items-center justify-center rounded-xl text-white text-xl">🏥</div>
+                <span class="font-bold text-lg text-slate-800">병의원</span>
+            </div>
+            
+            <ul class="text-[13px] text-slate-600 space-y-1.5 mb-6 leading-relaxed">
+                <li>• 네이버 검색광고 + 블로그 연계</li>
+                <li>• 클릭당 전환율(CVR) 2.3% 달성</li>
+            </ul>
+
+            <div class="space-y-4">
+                <div class="text-[#2E6FF2] font-bold text-base mb-1">예약 문의 3.5배 증가</div>
+                <div class="space-y-3">
+                    <div>
+                        <div class="chart-label text-slate-400">진행 전</div>
+                        <div class="w-full bg-slate-100 rounded-full h-[12px]">
+                            <div class="bar-before" style="width: 25%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="chart-label text-[#2E6FF2]">AFTER 블루컴즈</div>
+                        <div class="w-full bg-slate-100 rounded-full h-[18px]">
+                            <div class="bar-after flex items-center justify-end px-2" style="width: 87.5%;">
+                                <span class="text-[9px] text-white font-black italic">3.5X UP!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="case-card mb-8 p-6 shadow-md" style="background-image: url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=500');">
+        <div class="case-content">
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-10 h-10 bg-[#2E6FF2] flex items-center justify-center rounded-xl text-white text-xl">🚗</div>
+                <span class="font-bold text-lg text-slate-800">렌터카</span>
+            </div>
+            
+            <ul class="text-[13px] text-slate-600 space-y-1.5 mb-6 leading-relaxed">
+                <li>• GDN + 카카오모먼트 믹스</li>
+                <li>• 채널추가 230% 증가</li>
+            </ul>
+
+            <div class="space-y-4">
+                <div class="text-[#2E6FF2] font-bold text-base mb-1">단가 대비 노출 4배 ↑</div>
+                <div class="space-y-3">
+                    <div>
+                        <div class="chart-label text-slate-400">진행 전</div>
+                        <div class="w-full bg-slate-100 rounded-full h-[12px]">
+                            <div class="bar-before" style="width: 20%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="chart-label text-[#2E6FF2]">AFTER 블루컴즈</div>
+                        <div class="w-full bg-slate-100 rounded-full h-[18px]">
+                            <div class="bar-after flex items-center justify-end px-2" style="width: 80%;">
+                                <span class="text-[9px] text-white font-black italic">4.0X UP!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="case-card p-6 shadow-md" style="background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=500');">
+        <div class="case-content">
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-10 h-10 bg-[#2E6FF2] flex items-center justify-center rounded-xl text-white text-xl">🏢</div>
+                <span class="font-bold text-lg text-slate-800">프랜차이즈</span>
+            </div>
+            
+            <ul class="text-[13px] text-slate-600 space-y-1.5 mb-6 leading-relaxed">
+                <li>• 브랜드검색 + 랜딩 페이지 최적화</li>
+                <li>• 계약 전환율 8.9% 달성</li>
+            </ul>
+
+            <div class="space-y-4">
+                <div class="text-[#2E6FF2] font-bold text-base mb-1">월 가맹문의 180건</div>
+                <div class="space-y-3">
+                    <div>
+                        <div class="chart-label text-slate-400">기존 유입</div>
+                        <div class="w-full bg-slate-100 rounded-full h-[12px]">
+                            <div class="bar-before" style="width: 35%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="chart-label text-[#2E6FF2]">AFTER 블루컴즈</div>
+                        <div class="w-full bg-slate-100 rounded-full h-[18px]">
+                            <div class="bar-after flex items-center justify-end px-2" style="width: 92%;">
+                                <span class="text-[9px] text-white font-black italic">180 LEADS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </body>
+</html>
