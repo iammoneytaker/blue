@@ -3,120 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Process Design</title>
+    <title>Responsive Performance Process</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
     <style>
         :root {
             --primary: #2563eb;
-            --primary-light: #eff6ff;
-            --text-main: #1e293b;
+            --primary-gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            --bg: #fdfdfe;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
             --text-sub: #64748b;
-            --bg: #f8fafc;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard', sans-serif; }
-        body { background-color: var(--bg); color: var(--text-main); padding: 40px 20px; }
+        body { background-color: var(--bg); color: var(--text-main); padding: 60px 20px; word-break: keep-all; }
 
-        .container { max-width: 500px; margin: 0 auto; }
+        .container { max-width: 1200px; margin: 0 auto; }
 
-        /* Header */
-        .header { text-align: center; margin-bottom: 40px; }
-        .header h2 { font-size: 24px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.5px; }
-        .header p { font-size: 15px; color: var(--text-sub); line-height: 1.5; }
+        /* Title Section */
+        .header { text-align: center; margin-bottom: 60px; }
+        .header h2 { font-size: 32px; font-weight: 800; margin-bottom: 12px; letter-spacing: -1px; }
+        .header p { font-size: 18px; color: var(--text-sub); }
 
-        /* Process Flow */
-        .process-wrapper { position: relative; display: flex; flex-direction: column; gap: 20px; }
-        
-        /* vertical line connector */
-        .process-wrapper::before {
-            content: ''; position: absolute; left: 30px; top: 20px; bottom: 20px;
-            width: 2px; background: linear-gradient(to bottom, var(--primary), #e2e8f0);
-            z-index: 0; opacity: 0.3;
+        /* Process Grid */
+        .process-grid { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 24px; 
+            position: relative;
         }
 
+        /* Card Style */
         .step-card {
-            position: relative; background: #ffffff; padding: 24px;
-            border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.7);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-            display: flex; align-items: flex-start; gap: 20px;
-            z-index: 1; transition: transform 0.2s ease;
+            position: relative; background: var(--card-bg); padding: 40px 30px;
+            border-radius: 32px; border: 1px solid #eef2f6;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex; flex-direction: column; align-items: center; text-align: center;
         }
 
-        .step-card:active { transform: scale(0.98); }
-
-        .icon-box {
-            min-width: 54px; height: 54px; background: var(--primary-light);
-            border-radius: 16px; display: flex; align-items: center; justify-content: center;
-            font-size: 24px; color: var(--primary); font-weight: bold;
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
+            border-color: #dbeafe;
         }
 
-        .content h3 { font-size: 18px; font-weight: 700; margin-bottom: 4px; color: var(--text-main); }
-        .content p { font-size: 14px; color: var(--text-sub); line-height: 1.4; word-break: keep-all; }
-
-        /* Number background */
-        .step-num {
-            position: absolute; right: 20px; top: 10px;
-            font-size: 40px; font-weight: 900; color: #f1f5f9;
-            z-index: -1; user-select: none;
+        /* Step Number Tag */
+        .step-badge {
+            background: var(--primary-light, #f0f7ff); color: var(--primary);
+            padding: 6px 14px; border-radius: 100px; font-size: 12px; font-weight: 700;
+            margin-bottom: 20px; border: 1px solid #dbeafe;
         }
 
-        /* Bottom Summary */
-        .summary-box {
-            margin-top: 30px; background: var(--primary); color: white;
-            padding: 20px; border-radius: 20px; text-align: center;
-            box-shadow: 0 15px 30px -10px rgba(37, 99, 235, 0.4);
+        .icon-wrapper {
+            width: 70px; height: 70px; background: var(--bg);
+            border-radius: 24px; display: flex; align-items: center; justify-content: center;
+            font-size: 32px; margin-bottom: 24px; transition: transform 0.3s ease;
         }
-        .summary-box p { font-size: 14px; font-weight: 600; line-height: 1.6; letter-spacing: -0.3px; }
+        .step-card:hover .icon-wrapper { transform: scale(1.1) rotate(-5px); }
+
+        .content h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+        .content p { font-size: 15px; color: var(--text-sub); line-height: 1.6; }
+
+        /* Connecting Lines (PC only) */
+        @media (min-width: 1025px) {
+            .step-card:not(:last-child)::after {
+                content: '→'; position: absolute; right: -24px; top: 50%;
+                transform: translateY(-50%); font-size: 24px; color: #cbd5e1;
+                font-weight: 300; pointer-events: none;
+            }
+        }
+
+        /* Bottom Result Banner */
+        .result-banner {
+            margin-top: 50px; background: #0f172a; border-radius: 24px; padding: 30px;
+            display: flex; align-items: center; justify-content: center; gap: 20px;
+            color: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .result-banner .tag { background: var(--primary-gradient); padding: 4px 12px; border-radius: 6px; font-size: 14px; font-weight: 700; }
+        .result-banner p { font-size: 17px; font-weight: 500; opacity: 0.9; }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .process-grid { grid-template-columns: repeat(2, 1fr); }
+            .header h2 { font-size: 28px; }
+        }
+
+        @media (max-width: 640px) {
+            .process-grid { grid-template-columns: 1fr; }
+            .step-card { padding: 30px 20px; }
+            .result-banner { flex-direction: column; text-align: center; }
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="header">
+    <header class="header">
         <h2>운영 방식</h2>
-        <p>체계적인 4단계 프로세스로<br>최적의 전환 성과를 달성합니다.</p>
-    </div>
+        <p>검증된 4개 단계가 성과를 유도합니다.</p>
+    </header>
 
-    <div class="process-wrapper">
+    <div class="process-grid">
         <div class="step-card">
-            <span class="step-num">01</span>
-            <div class="icon-box">🔔</div>
+            <span class="step-badge">STEP 01</span>
+            <div class="icon-wrapper">🚀</div>
             <div class="content">
                 <h3>프리미엄 매체 노출</h3>
-                <p>기내·공항 등 오프라인 매체를 통해 브랜드의 신뢰도를 즉각적으로 확보합니다.</p>
+                <p>기내·공항 등 신뢰도 높은 매체를 선점하여 브랜드의 가치를 높입니다.</p>
             </div>
         </div>
 
         <div class="step-card">
-            <span class="step-num">02</span>
-            <div class="icon-box">👥</div>
+            <span class="step-badge">STEP 02</span>
+            <div class="icon-wrapper">🎯</div>
             <div class="content">
-                <h3>데이터 기반 타겟 세분화</h3>
-                <p>승객 특성별 정교한 카테고리 군 설정을 통해 잠재 고객을 분류합니다.</p>
+                <h3>데이터 타겟 세분화</h3>
+                <p>빅데이터를 통해 구매 가능성이 높은 승객군을 정교하게 추출합니다.</p>
             </div>
         </div>
 
         <div class="step-card">
-            <span class="step-num">03</span>
-            <div class="icon-box">🔗</div>
+            <span class="step-badge">STEP 03</span>
+            <div class="icon-wrapper">⛓️</div>
             <div class="content">
-                <h3>온·오프라인 퍼포먼스 연동</h3>
-                <p>오프라인 경험을 온라인 리타겟팅으로 연결하여 끊김 없는 광고를 설계합니다.</p>
+                <h3>온·오프라인 연동</h3>
+                <p>오프라인 접점을 온라인 리타겟팅으로 연결해 이탈률을 최소화합니다.</p>
             </div>
         </div>
 
         <div class="step-card">
-            <span class="step-num">04</span>
-            <div class="icon-box">🛍️</div>
+            <span class="step-badge">STEP 04</span>
+            <div class="icon-wrapper">💰</div>
             <div class="content">
-                <h3>구매 전환 완성</h3>
-                <p>최적화된 랜딩페이지와 강력한 CTA를 통해 실제 매출 성과를 이끌어냅니다.</p>
+                <h3>구매 전환 극대화</h3>
+                <p>최적화된 UX/UI와 CTA 설계로 실제 퍼포먼스를 증명합니다.</p>
             </div>
         </div>
     </div>
 
-    <div class="summary-box">
-        <p>오프라인 신뢰 기반 + 온라인 실행력<br>→ 브랜드 인지도 상승 및 실제 구매 수치 확보</p>
+    <div class="result-banner">
+        <span class="tag">GOAL</span>
+        <p>인지도 상승을 넘어 실질적인 매출 수치로 보답합니다.</p>
     </div>
 </div>
 
