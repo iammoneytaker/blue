@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blue Communications - Performance Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <style>
+      @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+      body {
+        font-family: "Pretendard", sans-serif;
+        letter-spacing: -0.02em;
+      }
+      [x-cloak] {
+        display: none !important;
+      }
+      .hero-card {
+        transition: all 0.3s ease;
+      }
+      @media (min-width: 1024px) {
+        .hero-card:hover {
+          transform: translateY(-8px);
+          border-color: #2563eb;
+          box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+        .hero-card:hover .cta-btn {
+          background-color: #2563eb;
+          color: white;
+          border-color: #2563eb;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-white text-slate-900" x-data="portfolioApp()">
+    <section
+      class="pt-16 pb-12 md:pt-28 md:pb-24 px-4 md:px-6 text-center relative overflow-hidden"
+    >
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-50/30 rounded-full blur-3xl -z-10 opacity-60 pointer-events-none"
+      ></div>
+      <p class="text-blue-600 font-bold text-xs mb-3 tracking-widest uppercase">
+        Results-driven performance
+      </p>
+      <h1 class="text-2xl md:text-6xl font-black mb-3 leading-tight">
+        마케팅, 누구나 합니다.
+      </h1>
+      <h2 class="text-2xl md:text-6xl font-black mb-8 md:mb-16 leading-tight">
+        하지만 <span class="text-blue-600">'성과'</span>는 아무나 못 냅니다.
+      </h2>
+
+      <div
+        class="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6"
+      >
+        <template x-for="item in cases" :key="item.id">
+          <button
+            @click="openModal(item)"
+            class="hero-card bg-white p-4 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-slate-100 shadow-sm text-center flex flex-col items-center justify-between min-h-[180px] md:min-h-[340px]"
+          >
+            <div
+              class="flex flex-col items-center w-full flex-grow justify-center"
+            >
+              <div
+                class="w-10 h-10 md:w-16 md:h-16 bg-slate-50 rounded-xl flex items-center justify-center mb-3 md:mb-6"
+              >
+                <svg
+                  class="w-5 h-5 md:w-8 md:h-8 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  x-html="item.icon"
+                ></svg>
+              </div>
+              <h3
+                class="text-sm md:text-xl font-black mb-1"
+                x-text="item.label"
+              ></h3>
+              <div class="py-2 border-t border-slate-50 w-full mt-2">
+                <span
+                  class="text-[10px] md:text-base font-black text-blue-600 italic"
+                  x-text="item.preview"
+                ></span>
+              </div>
+            </div>
+          </button>
+        </template>
+      </div>
+    </section>
+
+    <section class="py-14 md:py-24 px-4 md:px-6 bg-slate-50">
+      <div class="max-w-6xl mx-auto text-center mb-10 md:mb-16">
+        <h2 class="text-xl md:text-3xl font-black mb-2">
+          성과가 만든 블루의 <span class="text-blue-600">진짜 자산</span>
+        </h2>
+        <p class="text-slate-500 text-[10px] md:text-sm font-medium">
+          압도적 수치는 실전 경험으로 증명됩니다.
+        </p>
+      </div>
+      <div
+        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8"
+      >
+        <div
+          class="bg-white p-6 md:p-10 rounded-3xl border border-slate-100 flex gap-4 md:flex-col items-center md:items-start"
+        >
+          <div
+            class="w-10 h-10 md:w-12 md:h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 md:mb-6"
+          >
+            <svg
+              class="w-5 h-5 md:w-6 md:h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-base md:text-2xl font-black md:mb-3">
+              7년 이상 파트너십
+            </h3>
+            <p
+              class="text-slate-500 text-[11px] md:text-sm leading-relaxed hidden md:block italic font-medium"
+            >
+              오직 '본질'을 아는 팀만이 장기 신뢰를 유지합니다.
+            </p>
+          </div>
+        </div>
+        <div
+          class="bg-white p-6 md:p-10 rounded-3xl border border-slate-100 flex gap-4 md:flex-col items-center md:items-start"
+        >
+          <div
+            class="w-10 h-10 md:w-12 md:h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 md:mb-6"
+          >
+            <svg
+              class="w-5 h-5 md:w-6 md:h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              ></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-base md:text-2xl font-black md:mb-3">
+              영업 인력 0명
+            </h3>
+            <p
+              class="text-slate-500 text-[11px] md:text-sm leading-relaxed hidden md:block italic font-medium"
+            >
+              강력한 추천이 블루의 유일한 영업 사원입니다.
+            </p>
+          </div>
+        </div>
+        <div
+          class="bg-white p-6 md:p-10 rounded-3xl border border-slate-100 flex gap-4 md:flex-col items-center md:items-start"
+        >
+          <div
+            class="w-10 h-10 md:w-12 md:h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 md:mb-6"
+          >
+            <svg
+              class="w-5 h-5 md:w-6 md:h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-base md:text-2xl font-black md:mb-3">
+              가구 브랜드 6개월 5억
+            </h3>
+            <p
+              class="text-slate-500 text-[11px] md:text-sm leading-relaxed hidden md:block italic font-medium"
+            >
+              직접 내 돈을 써보며 발견한 '성장의 실마리'입니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-14 md:py-32 px-4 md:px-6 bg-white">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10">
+        <div class="md:col-span-7">
+          <p
+            class="text-blue-600 font-bold text-xs mb-3 uppercase tracking-widest"
+          >
+            How We Work
+          </p>
+          <h2 class="text-2xl md:text-5xl font-black mb-6 leading-tight">
+            압도적 실행력 위에<br /><span class="text-blue-600"
+              >비즈니스의 본질</span
+            >을 더합니다.
+          </h2>
+          <p
+            class="text-slate-600 text-sm md:text-lg leading-relaxed font-medium mb-6"
+          >
+            당신의 시간을 아끼기 위해 모든 실무를 책임지고 수행하며, 성과 정체를
+            돌파할 '구조적 해결책'을 함께 고민합니다.
+          </p>
+        </div>
+        <div
+          class="md:col-span-5 bg-slate-50 p-6 rounded-[2rem] border border-slate-100 flex flex-col justify-center"
+        >
+          <div class="space-y-4">
+            <div class="flex items-center gap-4">
+              <div
+                class="w-10 h-10 bg-white border text-slate-400 rounded-full flex items-center justify-center text-[10px] font-black italic"
+              >
+                Step 1
+              </div>
+              <p class="text-xs md:text-base font-bold text-slate-700">
+                전문 운영을 통한 리소스 확보
+              </p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center text-[10px] font-black italic shadow-lg"
+              >
+                Step 2
+              </div>
+              <p class="text-xs md:text-base font-bold text-blue-600">
+                비즈니스 본질 분석 통한 성과 돌파
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-14 md:py-32 px-4 md:px-6 bg-slate-50">
+      <div class="max-w-6xl mx-auto text-center mb-10 md:mb-16">
+        <h2 class="text-2xl md:text-5xl font-black mb-4">우리가 잘하는 것들</h2>
+      </div>
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div
+          class="bg-white p-6 rounded-3xl border border-slate-100 flex gap-4 items-center"
+        >
+          <div
+            class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center flex-shrink-0"
+          >
+            <svg
+              class="w-7 h-7 text-blue-600"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 7V3H2v18h20V7H12z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-base font-black text-slate-900 mb-1 leading-tight">
+              BRAND / PRODUCT
+            </h4>
+            <p class="text-slate-500 text-[11px] leading-snug">
+              제품 본질 기반의 마케팅 전략 설계
+            </p>
+          </div>
+        </div>
+        <div
+          class="bg-white p-6 rounded-3xl border border-slate-100 flex gap-4 items-center"
+        >
+          <div
+            class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center flex-shrink-0"
+          >
+            <svg
+              class="w-7 h-7 text-blue-600"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"
+              />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-base font-black text-slate-900 mb-1 leading-tight">
+              MEDIA / CONTENTS
+            </h4>
+            <p class="text-slate-500 text-[11px] leading-snug">
+              고효율 콘텐츠 기획 및 퍼포먼스 광고 운영
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-6xl mx-auto mt-4 bg-white p-6 rounded-3xl border-2 border-blue-600 flex gap-4 items-center"
+      >
+        <div
+          class="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center flex-shrink-0"
+        >
+          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1 2 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7z"
+            />
+          </svg>
+        </div>
+        <div>
+          <h4 class="text-base font-black text-slate-900 mb-1 leading-tight">
+            DATA ANALYTICS
+          </h4>
+          <p class="text-slate-500 text-[11px] leading-snug">
+            데이터 기반의 개선 중심 리포트 제공
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-40 px-4 md:px-6 bg-white text-center">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-5xl font-black mb-8 leading-tight">
+          블루와 함께 <br class="md:hidden" /><span class="text-blue-600"
+            >지속가능한 성장</span
+          >을 시작하세요.
+        </h2>
+        <a
+          href="/contact"
+          class="inline-block bg-blue-600 text-white px-8 py-5 md:px-14 md:py-7 rounded-2xl font-black text-lg md:text-2xl shadow-xl hover:bg-blue-700 transition-all"
+          >지금 문의하기</a
+        >
+      </div>
+    </section>
+
+    <script>
+      function portfolioApp() {
+        return {
+          isOpen: false,
+          isChartVisible: false,
+          currentCase: null,
+          cases: [
+            {
+              id: "sales",
+              label: "매출",
+              preview: "ROAS 820% 달성",
+              icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>',
+            },
+            {
+              id: "cvr",
+              label: "전환",
+              preview: "전환율 2.4배 상승",
+              icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>',
+            },
+            {
+              id: "traffic",
+              label: "유입",
+              preview: "CPC 45% 절감",
+              icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>',
+            },
+            {
+              id: "inquiry",
+              label: "문의",
+              preview: "DB 유입 3.5배 증가",
+              icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>',
+            },
+          ],
+          openModal(item) {
+            this.isOpen = true;
+            this.currentCase = item;
+            setTimeout(() => {
+              this.isChartVisible = true;
+            }, 300);
+          },
+          closeModal() {
+            this.isOpen = false;
+            this.isChartVisible = false;
+          },
+        };
+      }
+    </script>
+  </body>
+</html>

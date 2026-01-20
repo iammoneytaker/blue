@@ -1,200 +1,1478 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blue Communications - Performance Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
     <style>
-        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-        body { font-family: 'Pretendard', sans-serif; letter-spacing: -0.02em; }
-        [x-cloak] { display: none !important; }
-        .card-active:hover { transform: translateY(-8px); border-color: #2563eb; box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+      @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+      body {
+        font-family: "Pretendard", sans-serif;
+        letter-spacing: -0.02em;
+      }
+      [x-cloak] {
+        display: none !important;
+      }
+      /* Hero 카드 호버 효과 */
+      .hero-card {
+        transition: all 0.3s ease;
+      }
+      @media (min-width: 1024px) {
+        .hero-card:hover {
+          transform: translateY(-8px);
+          border-color: #2563eb;
+          box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+        .hero-card:hover .cta-btn {
+          background-color: #2563eb;
+          color: white;
+          border-color: #2563eb;
+        }
+      }
     </style>
-</head>
-<body class="bg-white text-slate-900" x-data="portfolioApp()">
+  </head>
+  <body class="bg-white text-slate-900" x-data="portfolioApp()">
+    <section
+      class="pt-20 pb-16 md:pt-28 md:pb-24 px-4 md:px-6 text-center relative overflow-hidden"
+    >
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-50/50 rounded-full blur-3xl -z-10 opacity-60 pointer-events-none"
+      ></div>
 
-    <section class="pt-24 pb-20 px-6 text-center">
-        <p class="text-blue-600 font-bold text-sm mb-4 tracking-widest">Results-driven performance</p>
-        <h1 class="text-4xl md:text-5xl font-black mb-2 leading-tight">마케팅, 누구나 합니다.</h1>
-        <h2 class="text-4xl md:text-5xl font-black mb-10 leading-tight">하지만 <span class="text-blue-600">'성과'</span>는 아무나 못 냅니다.</h2>
-        
-        <div class="max-w-3xl mx-auto mb-16">
-            <p class="text-slate-500 font-medium mb-6 leading-relaxed">
-                우리는 '브랜딩'이라는 말로 책임을 회피하지 않습니다.<br>
-                매출, 전환, 유입, 재방문, 고객문의 숫자로 증명되는 결과를 위해, 끝까지 뛰는 팀.
-            </p>
-            <div class="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-50 rounded-full border border-blue-100 shadow-sm">
-                <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
-                </span>
-                <span class="text-xs font-bold text-blue-700 underline underline-offset-4 cursor-default">각 지표를 클릭하여 상세 성과 사례를 확인하세요.</span>
+      <p
+        class="text-blue-600 font-bold text-xs md:text-sm mb-4 tracking-widest uppercase"
+      >
+        Results-driven performance
+      </p>
+
+      <h1
+        class="text-3xl md:text-6xl font-black mb-4 md:mb-6 leading-tight text-slate-900"
+      >
+        마케팅, 누구나 합니다.
+      </h1>
+      <h2
+        class="text-3xl md:text-6xl font-black mb-12 md:mb-20 leading-tight text-slate-900"
+      >
+        하지만 <span class="text-blue-600">'성과'</span>는 아무나 못 냅니다.
+      </h2>
+
+      <div class="max-w-3xl mx-auto mb-14">
+        <p
+          class="text-slate-500 text-sm md:text-base font-medium leading-relaxed"
+        >
+          우리는 '브랜딩'이라는 말로 책임을 회피하지 않습니다.<br
+            class="hidden md:block"
+          />
+          매출, 전환, 유입, 재방문, 고객문의 숫자로 증명되는 결과를 위해, 끝까지
+          뛰는 팀.
+        </p>
+      </div>
+
+      <div
+        class="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 relative z-10"
+      >
+        <template x-for="item in cases" :key="item.id">
+          <button
+            @click="openModal(item)"
+            class="hero-card bg-white p-6 md:p-8 rounded-[2rem] border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] text-center group relative overflow-hidden flex flex-col items-center justify-between min-h-[240px] md:min-h-[340px]"
+          >
+            <div
+              class="flex flex-col items-center w-full flex-grow justify-center"
+            >
+              <div
+                class="w-12 h-12 md:w-16 md:h-16 bg-slate-50 rounded-2xl flex items-center justify-center mb-5 md:mb-6 group-hover:bg-blue-600 transition-colors"
+              >
+                <svg
+                  class="w-6 h-6 md:w-8 md:h-8 text-blue-600 group-hover:text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  x-html="item.icon"
+                ></svg>
+              </div>
+              <h3
+                class="text-base md:text-xl font-black mb-2 group-hover:text-blue-600 transition-colors"
+                x-text="item.label"
+              ></h3>
+              <p
+                class="text-[10px] md:text-xs text-slate-400 font-medium mb-4 md:mb-6"
+                x-text="item.subLabel"
+              ></p>
+              <div class="py-3 md:py-4 border-t border-slate-50 w-full">
+                <span
+                  class="text-xs md:text-base font-black text-blue-600 italic"
+                  x-text="item.preview"
+                ></span>
+              </div>
             </div>
+
+            <div
+              class="cta-btn w-full py-3 rounded-xl bg-slate-50 text-slate-500 text-[10px] md:text-xs font-bold border border-slate-100 transition-all flex items-center justify-center gap-1.5 mt-4"
+            >
+              <span>성공 사례 확인하기</span>
+              <svg
+                class="w-3 h-3 md:w-3.5 md:h-3.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                ></path>
+              </svg>
+            </div>
+          </button>
+        </template>
+      </div>
+    </section>
+    <section
+      class="pt-20 pb-16 md:pt-28 md:pb-24 px-4 md:px-6 text-center relative overflow-hidden"
+    >
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-50/50 rounded-full blur-3xl -z-10 opacity-60 pointer-events-none"
+      ></div>
+
+      <p
+        class="text-blue-600 font-bold text-xs md:text-sm mb-4 tracking-widest uppercase"
+      >
+        Results-driven performance
+      </p>
+
+      <h1
+        class="text-3xl md:text-6xl font-black mb-4 md:mb-6 leading-tight text-slate-900 break-keep"
+      >
+        마케팅, 누구나 합니다.
+      </h1>
+      <h2
+        class="text-3xl md:text-6xl font-black mb-10 md:mb-20 leading-tight text-slate-900 break-keep"
+      >
+        하지만 <span class="text-blue-600">'성과'</span>는 아무나 못 냅니다.
+      </h2>
+
+      <div class="max-w-3xl mx-auto mb-14 px-2">
+        <p
+          class="text-slate-500 text-[13px] md:text-base font-medium leading-relaxed"
+        >
+          <span class="block md:inline mb-1 md:mb-0"
+            >우리는 '브랜딩'이라는 말로 책임을 회피하지 않습니다.</span
+          >
+          <span class="block md:inline mb-1 md:mb-0"
+            >매출, 전환, 유입, 재방문, 고객문의</span
+          >
+          <span class="block md:inline font-bold text-slate-900 italic">
+            <span class="text-blue-600">숫자로 증명되는 결과</span>를 위해,
+            끝까지 뛰는 팀.
+          </span>
+        </p>
+      </div>
+
+      <div
+        class="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 relative z-10"
+      >
+        <template x-for="item in cases" :key="item.id">
+          <button
+            @click="openModal(item)"
+            class="hero-card bg-white p-5 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] text-center group relative overflow-hidden flex flex-col items-center justify-between min-h-[220px] md:min-h-[340px]"
+          >
+            <div
+              class="flex flex-col items-center w-full flex-grow justify-center"
+            >
+              <div
+                class="w-10 h-10 md:w-16 md:h-16 bg-slate-50 rounded-2xl flex items-center justify-center mb-4 md:mb-6 group-hover:bg-blue-600 transition-colors"
+              >
+                <svg
+                  class="w-5 h-5 md:w-8 md:h-8 text-blue-600 group-hover:text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  x-html="item.icon"
+                ></svg>
+              </div>
+              <h3
+                class="text-sm md:text-xl font-black mb-2 group-hover:text-blue-600 transition-colors"
+                x-text="item.label"
+              ></h3>
+              <p
+                class="text-[9px] md:text-xs text-slate-400 font-medium mb-4 md:mb-6"
+                x-text="item.subLabel"
+              ></p>
+              <div class="py-3 md:py-4 border-t border-slate-50 w-full">
+                <span
+                  class="text-[11px] md:text-base font-black text-blue-600 italic"
+                  x-text="item.preview"
+                ></span>
+              </div>
+            </div>
+
+            <div
+              class="cta-btn w-full py-2.5 rounded-xl bg-slate-50 text-slate-500 text-[9px] md:text-xs font-bold border border-slate-100 transition-all flex items-center justify-center gap-1.5 mt-3"
+            >
+              <span>성공 사례 확인하기</span>
+              <svg
+                class="w-3 h-3"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                ></path>
+              </svg>
+            </div>
+          </button>
+        </template>
+      </div>
+    </section>
+    <section class="py-16 md:py-24 px-4 md:px-6 bg-slate-50 relative">
+      <div class="max-w-6xl mx-auto relative z-10">
+        <div class="text-center mb-12 md:mb-16">
+          <h2 class="text-2xl md:text-3xl font-black mb-3 text-slate-900">
+            성과를 냈더니 따라온 것들,<br class="md:hidden" />
+            블루의 <span class="text-blue-600">진짜 자산</span>입니다.
+          </h2>
+          <p class="text-slate-500 text-xs md:text-sm font-medium">
+            압도적인 수치는 견고한 파트너십과 실전 경험으로 증명됩니다.
+          </p>
         </div>
 
-        <div class="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6">
-            <template x-for="item in cases" :key="item.id">
-                <button @click="openModal(item)" 
-                        class="card-active bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm transition-all text-center group relative overflow-hidden flex flex-col items-center">
-                    <div class="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 transition-colors">
-                        <svg class="w-7 h-7 text-blue-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" x-html="item.icon"></svg>
-                    </div>
-                    <h3 class="text-lg font-black mb-2 group-hover:text-blue-600 transition-colors" x-text="item.label"></h3>
-                    <p class="text-[11px] text-slate-400 font-medium mb-4" x-text="item.subLabel"></p>
-                    <div class="pt-4 border-t border-slate-50 mb-6">
-                        <span class="text-sm font-black text-blue-600 italic" x-text="item.preview"></span>
-                    </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div
+            class="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-slate-100 flex flex-col items-start hover:shadow-md transition-shadow"
+          >
+            <div
+              class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3
+              class="text-xl md:text-2xl font-black mb-3 md:mb-4 text-slate-900"
+            >
+              7년 이상<br />장기 파트너십 유지
+            </h3>
+            <p
+              class="text-slate-500 text-xs md:text-sm leading-relaxed font-medium"
+            >
+              반짝하는 ROAS는 누구나 만들 수 있습니다.<br />하지만 7년이 넘는
+              시간 동안 변함없는 신뢰를 유지하는 것은 오직 '본질'을 아는 팀만이
+              가능합니다.
+            </p>
+          </div>
 
-                    <div class="mt-auto w-full py-3 rounded-xl bg-slate-50 text-slate-500 text-[11px] font-bold border border-slate-100 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all flex items-center justify-center gap-2">
-                        성공 사례 확인하기
-                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </div>
-                </button>
-            </template>
+          <div
+            class="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-slate-100 flex flex-col items-start hover:shadow-md transition-shadow"
+          >
+            <div
+              class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3
+              class="text-xl md:text-2xl font-black mb-3 md:mb-4 text-slate-900"
+            >
+              영업 인력 0명<br />입소문으로 증명된 성장
+            </h3>
+            <p
+              class="text-slate-500 text-xs md:text-sm leading-relaxed font-medium"
+            >
+              우리는 제안서를 무작위로 뿌리지 않습니다.<br />우리가 만들어낸
+              압도적인 성과를 직접 경험한 파트너사들의 강력한 추천이 블루의
+              유일한 영업 사원입니다.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-slate-100 flex flex-col items-start hover:shadow-md transition-shadow"
+          >
+            <div
+              class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                ></path>
+              </svg>
+            </div>
+            <h3
+              class="text-xl md:text-2xl font-black mb-3 md:mb-4 text-slate-900"
+            >
+              자사 가구 브랜드<br />런칭 6개월 매출 5억
+            </h3>
+            <p
+              class="text-slate-500 text-xs md:text-sm leading-relaxed font-medium"
+            >
+              남의 돈으로 대행만 하는 팀은 모릅니다.<br />직접 내 돈을 써가며
+              비즈니스의 '틈'을 발견하고 매출로 연결해본 실전 경험이 우리의 가장
+              날카로운 무기입니다.
+            </p>
+          </div>
         </div>
+      </div>
+    </section>
+    <section
+      class="py-16 md:py-24 px-4 md:px-6 bg-slate-50 relative"
+      x-data="{ activeAsset: 0 }"
+    >
+      <div class="max-w-6xl mx-auto relative z-10">
+        <div class="text-center mb-10 md:mb-16">
+          <h2
+            class="text-2xl md:text-3xl font-black mb-3 text-slate-900 leading-tight"
+          >
+            성과를 냈더니 따라온 것들,<br class="md:hidden" />
+            블루의 <span class="text-blue-600">진짜 자산</span>입니다.
+          </h2>
+          <p class="text-slate-500 text-xs md:text-sm font-medium">
+            압도적인 수치는 견고한 파트너십과 실전 경험으로 증명됩니다.
+          </p>
+        </div>
+
+        <div class="hidden md:grid grid-cols-3 gap-8">
+          <div
+            class="bg-white p-10 rounded-[2rem] border border-slate-100 flex flex-col items-start hover:shadow-md transition-shadow"
+          >
+            <div
+              class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3
+              class="text-xl md:text-2xl font-black mb-4 text-slate-900 leading-tight"
+            >
+              7년 이상<br />장기 파트너십 유지
+            </h3>
+            <p class="text-slate-500 text-sm leading-relaxed font-medium">
+              반짝하는 ROAS는 누구나 만들 수 있습니다. 하지만 7년이 넘는 시간
+              동안 변함없는 신뢰를 유지하는 것은 오직 '본질'을 아는 팀만이
+              가능합니다.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-10 rounded-[2rem] border border-slate-100 flex flex-col items-start hover:shadow-md transition-shadow"
+          >
+            <div
+              class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3
+              class="text-xl md:text-2xl font-black mb-4 text-slate-900 leading-tight"
+            >
+              영업 인력 0명<br />입소문으로 증명된 성장
+            </h3>
+            <p class="text-slate-500 text-sm leading-relaxed font-medium">
+              우리는 제안서를 무작위로 뿌리지 않습니다. 우리가 만들어낸 압도적인
+              성과를 직접 경험한 파트너사들의 강력한 추천이 블루의 유일한 영업
+              사원입니다.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-10 rounded-[2rem] border border-slate-100 flex flex-col items-start hover:shadow-md transition-shadow"
+          >
+            <div
+              class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                ></path>
+              </svg>
+            </div>
+            <h3
+              class="text-xl md:text-2xl font-black mb-4 text-slate-900 leading-tight"
+            >
+              자사 가구 브랜드<br />런칭 6개월 매출 5억
+            </h3>
+            <p class="text-slate-500 text-sm leading-relaxed font-medium">
+              남의 돈으로 대행만 하는 팀은 모릅니다. 직접 내 돈을 써가며
+              비즈니스의 '틈'을 발견하고 매출로 연결해본 실전 경험이 우리의 가장
+              날카로운 무기입니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="md:hidden space-y-4">
+          <div
+            class="bg-white rounded-[2rem] border border-slate-100 overflow-hidden shadow-sm"
+          >
+            <button
+              @click="activeAsset = 0"
+              class="w-full p-6 flex items-center justify-between text-left"
+            >
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                </div>
+                <span class="font-black text-slate-900"
+                  >7년 이상 장기 파트너십 유지</span
+                >
+              </div>
+              <svg
+                class="w-5 h-5 text-slate-400 transition-transform duration-300"
+                :class="activeAsset === 0 ? 'rotate-180' : ''"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div x-show="activeAsset === 0" x-collapse x-cloak>
+              <div
+                class="px-6 pb-8 text-xs text-slate-500 leading-relaxed font-medium"
+              >
+                반짝하는 ROAS는 누구나 만들 수 있습니다. 하지만 7년이 넘는 시간
+                동안 변함없는 신뢰를 유지하는 것은 오직 '본질'을 아는 팀만이
+                가능합니다.
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-[2rem] border border-slate-100 overflow-hidden shadow-sm"
+          >
+            <button
+              @click="activeAsset = 1"
+              class="w-full p-6 flex items-center justify-between text-left"
+            >
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                    ></path>
+                  </svg>
+                </div>
+                <span class="font-black text-slate-900"
+                  >영업 인력 0명, 입소문 성장</span
+                >
+              </div>
+              <svg
+                class="w-5 h-5 text-slate-400 transition-transform duration-300"
+                :class="activeAsset === 1 ? 'rotate-180' : ''"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div x-show="activeAsset === 1" x-collapse x-cloak>
+              <div
+                class="px-6 pb-8 text-xs text-slate-500 leading-relaxed font-medium"
+              >
+                우리는 제안서를 무작위로 뿌리지 않습니다. 우리가 만들어낸
+                압도적인 성과를 직접 경험한 파트너사들의 강력한 추천이 블루의
+                유일한 영업 사원입니다.
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-[2rem] border border-slate-100 overflow-hidden shadow-sm"
+          >
+            <button
+              @click="activeAsset = 2"
+              class="w-full p-6 flex items-center justify-between text-left"
+            >
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                  </svg>
+                </div>
+                <span class="font-black text-slate-900"
+                  >자사 가구 브랜드 6개월 5억</span
+                >
+              </div>
+              <svg
+                class="w-5 h-5 text-slate-400 transition-transform duration-300"
+                :class="activeAsset === 2 ? 'rotate-180' : ''"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div x-show="activeAsset === 2" x-collapse x-cloak>
+              <div
+                class="px-6 pb-8 text-xs text-slate-500 leading-relaxed font-medium"
+              >
+                남의 돈으로 대행만 하는 팀은 모릅니다. 직접 내 돈을 써가며
+                비즈니스의 '틈'을 발견하고 매출로 연결해본 실전 경험이 우리의
+                가장 날카로운 무기입니다.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-20 md:py-32 px-4 md:px-6 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="mb-12 md:mb-20 text-left">
+          <p
+            class="text-blue-600 font-bold text-xs md:text-sm mb-4 tracking-widest uppercase"
+          >
+            How We Work
+          </p>
+          <h2
+            class="text-3xl md:text-5xl font-black mb-4 md:mb-6 leading-tight text-slate-900"
+          >
+            압도적인 실행력은 기본입니다.
+          </h2>
+          <h3
+            class="text-3xl md:text-5xl font-black mb-12 md:mb-20 leading-tight text-slate-900"
+          >
+            더 높은 성과를 위해 <br class="md:hidden" />
+            <span class="text-blue-600">비즈니스의 본질</span>을 들여다봅니다.
+          </h3>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-start"
+        >
+          <div class="md:col-span-7 space-y-8">
+            <p
+              class="text-slate-600 text-base md:text-lg leading-relaxed font-medium"
+            >
+              광고 대행사의 가장 큰 가치는 파트너사가 비즈니스에만 전념할 수
+              있게 돕는 것입니다. 우리는 당신의 귀한
+              <strong class="text-slate-900">시간을 아끼기 위해</strong> 복잡한
+              매체 운영부터 데이터 분석, 리포트 작성까지 모든 실무를 숙련된
+              노하우로 책임지고 수행합니다.
+            </p>
+            <p
+              class="text-slate-600 text-base md:text-lg leading-relaxed font-medium"
+            >
+              하지만 블루커뮤니케이션즈는 단순 운영에 머무르지 않습니다.
+              광고비의 한계를 넘어 더 높은 성과를 내기 위해서는, 결국 광고 세팅
+              이면의
+              <strong class="text-blue-600">비즈니스 구조와 제품의 본질</strong
+              >을 이해해야 하기 때문입니다. 이것이 우리가 비즈니스 자체에
+              몰입하는 진짜 이유입니다.
+            </p>
+          </div>
+
+          <div
+            class="md:col-span-5 bg-slate-50 p-8 md:p-10 rounded-[2.5rem] border border-slate-100"
+          >
+            <p class="text-slate-700 text-lg font-bold mb-6">
+              전략적 파트너가 되는 과정
+            </p>
+
+            <div class="space-y-6">
+              <div class="flex items-center gap-5">
+                <div
+                  class="flex-shrink-0 w-12 h-12 bg-white border border-slate-200 text-slate-400 rounded-full flex items-center justify-center text-xs font-black italic shadow-sm"
+                >
+                  Step 1
+                </div>
+                <p
+                  class="text-sm md:text-base font-bold text-slate-700 leading-tight"
+                >
+                  전문 운영을 통한<br />파트너사 리소스 확보
+                </p>
+              </div>
+
+              <div class="ml-6 w-px h-8 bg-slate-200"></div>
+
+              <div class="flex items-center gap-5">
+                <div
+                  class="flex-shrink-0 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-black italic shadow-xl shadow-blue-100"
+                >
+                  Step 2
+                </div>
+                <p
+                  class="text-sm md:text-base font-bold text-blue-600 leading-tight"
+                >
+                  비즈니스 본질 분석을 통한<br />성과 한계 돌파
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-10 pt-8 border-t border-slate-200">
+              <p
+                class="text-xs md:text-sm text-slate-500 leading-relaxed font-medium"
+              >
+                7년의 신뢰는 실무의 정교함과 비즈니스를 꿰뚫는 통찰이 만날 때
+                만들어졌습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="mt-20 md:mt-32 pt-12 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-10"
+        >
+          <div class="text-center md:text-left">
+            <p
+              class="text-slate-400 text-xs font-bold mb-3 uppercase tracking-tighter"
+            >
+              The Logic of Growth
+            </p>
+            <p
+              class="text-slate-900 font-bold text-xl md:text-2xl leading-tight"
+            >
+              직접 브랜드를 성공시키며 발견한<br />
+              <span class="text-blue-600">‘성장의 결정적 실마리’</span>를
+              공유합니다.
+            </p>
+          </div>
+
+          <a
+            href="/"
+            class="group bg-blue-600 text-white px-10 py-6 rounded-2xl font-black text-base md:text-lg shadow-2xl shadow-blue-200 hover:bg-blue-700 transition-all flex items-center gap-4"
+          >
+            지금 왜 ‘블루’와 일해야 할까요?
+            <svg
+              class="w-6 h-6 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <div x-show="isOpen" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm" x-cloak x-transition>
-        <div class="bg-white w-full max-w-6xl rounded-[3rem] shadow-2xl overflow-hidden max-h-[95vh] overflow-y-auto relative" @click.away="closeModal()">
-            <button @click="closeModal()" class="absolute top-8 right-8 text-slate-400 hover:text-slate-900 z-10 p-2 bg-slate-100 rounded-full transition-colors">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
-            <div class="p-10 lg:p-16">
-                <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 border-b border-slate-100 pb-10">
-                    <div>
-                        <span class="text-blue-600 font-black text-sm uppercase tracking-widest mb-3 block" x-text="currentCase?.label + ' PERFORMANCE CASE'"></span>
-                        <h3 class="text-2xl md:text-4xl font-black text-slate-900 leading-tight" x-text="currentCase?.caseTitle"></h3>
-                    </div>
-                    <div class="bg-blue-600 text-white px-8 py-5 rounded-[1.5rem] font-black text-2xl shadow-xl shadow-blue-200" x-text="currentCase?.highlight"></div>
-                </div>
-                <div class="grid lg:grid-cols-2 gap-16">
-                    <div>
-                        <table class="w-full text-sm border-t-2 border-slate-900">
-                            <tr class="border-b border-slate-100">
-                                <td class="bg-slate-50 p-5 font-bold text-slate-700 w-32 text-center">업종</td>
-                                <td class="p-5 font-medium text-slate-900" x-text="currentCase?.industry"></td>
-                            </tr>
-                            <tr class="border-b border-slate-100">
-                                <td class="bg-slate-50 p-5 font-bold text-slate-700 text-center">진행기간</td>
-                                <td class="p-5 text-slate-600 font-medium" x-text="currentCase?.period"></td>
-                            </tr>
-                            <tr class="border-b border-slate-100">
-                                <td class="bg-slate-50 p-5 font-bold text-slate-700 text-center align-middle">문제상황</td>
-                                <td class="p-5 text-slate-500 leading-relaxed text-xs" x-text="currentCase?.problem"></td>
-                            </tr>
-                            <tr class="border-b border-slate-100">
-                                <td class="bg-slate-50 p-5 font-bold text-slate-700 text-center align-middle">진행업무</td>
-                                <td class="p-5 text-slate-600">
-                                    <ul class="list-disc pl-5 space-y-2 text-xs font-medium">
-                                        <template x-for="task in currentCase?.tasks">
-                                            <li x-text="task"></li>
-                                        </template>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr class="bg-slate-900">
-                                <td class="p-5 font-bold text-white text-center">KPI</td>
-                                <td class="p-5 font-black text-blue-400" x-text="currentCase?.kpi"></td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="bg-slate-50 p-10 rounded-[3rem] border border-slate-100">
-                        <div class="grid grid-cols-3 gap-8 h-64 items-end">
-                            <template x-for="chart in currentCase?.chartData">
-                                <div class="flex flex-col items-center flex-1 h-full justify-end">
-                                    <div class="w-full flex items-end justify-center gap-2 mb-4 h-40">
-                                        <div class="w-8 bg-slate-200 rounded-t-lg transition-all duration-1000" :style="`height: ${chart.beforeH}%`" x-show="isChartVisible"></div>
-                                        <div class="w-8 bg-blue-600 rounded-t-lg transition-all duration-1000 delay-300" :style="`height: ${chart.afterH}%`" x-show="isChartVisible"></div>
-                                    </div>
-                                    <div class="text-center">
-                                        <p class="text-[10px] text-slate-400 font-bold mb-1" x-text="chart.beforeVal"></p>
-                                        <div :class="chart.isUp ? 'text-red-500' : 'text-blue-600'" class="text-xs font-black mb-2 flex items-center justify-center gap-0.5">
-                                            <span x-text="chart.isUp ? '▲' : '▼'"></span>
-                                            <span x-text="chart.afterVal"></span>
-                                        </div>
-                                        <p class="text-[11px] font-black text-slate-600 uppercase" x-text="chart.label"></p>
-                                    </div>
-                                </div>
-                            </template>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="py-24 md:py-36 px-4 md:px-6 bg-slate-50">
+      <div class="max-w-6xl mx-auto">
+        <div class="mb-20 md:mb-28 text-center">
+          <p
+            class="text-blue-600 font-bold text-xs md:text-sm mb-6 tracking-widest uppercase text-center"
+          >
+            Custom Strategy Design
+          </p>
+          <h2
+            class="text-3xl md:text-5xl font-black mb-4 md:mb-6 leading-tight text-slate-900 text-center"
+          >
+            정해진 패키지는 없습니다.
+          </h2>
+          <h3
+            class="text-3xl md:text-5xl font-black mb-12 md:mb-20 leading-tight text-slate-900 text-center"
+          >
+            비즈니스 구조에 맞는 <br class="md:hidden" />
+            <span class="text-blue-600">'최적의 조합'</span>을 설계합니다.
+          </h3>
+          <p class="text-slate-500 text-sm md:text-lg font-medium">
+            시장 포지셔닝부터 타겟의 구매 여정까지, 승률 높은 매체를 조합합니다.
+          </p>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+          <div
+            class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100 relative group"
+          >
+            <span
+              class="text-6xl font-black text-slate-50 absolute right-8 top-8"
+              >01</span
+            >
+            <div class="relative z-10">
+              <h3 class="text-xl font-black mb-6 text-slate-900">
+                비즈니스 및 시장 진단
+              </h3>
+              <ul class="space-y-4 text-sm text-slate-500 font-medium">
+                <li>• 시장 내 브랜드 포지셔닝 및 경쟁 우위 점검</li>
+                <li>• 데이터 기반의 제품 핵심 소구점(USP) 도출</li>
+                <li>• 기존 마케팅의 성과 정체 원인 정밀 분석</li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100 relative group"
+          >
+            <span
+              class="text-6xl font-black text-slate-50 absolute right-8 top-8"
+              >02</span
+            >
+            <div class="relative z-10">
+              <h3 class="text-xl font-black mb-6 text-slate-900">
+                전략적 믹스 설계
+              </h3>
+              <ul class="space-y-4 text-sm text-slate-500 font-medium">
+                <li>• IMC 기반의 SA, DA 매체 최적 배분</li>
+                <li>• '스카이트리거' 등 블루만의 독자 매체 활용</li>
+                <li>• 타겟 구매 결정 요인을 반영한 메시지 설계</li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100 relative group"
+          >
+            <span
+              class="text-6xl font-black text-slate-50 absolute right-8 top-8"
+              >03</span
+            >
+            <div class="relative z-10">
+              <h3 class="text-xl font-black mb-6 text-slate-900">
+                정밀 실행 및 성과 관리
+              </h3>
+              <ul class="space-y-4 text-sm text-slate-500 font-medium">
+                <li>• 고객 반응을 이끌어내는 고효율 소재 제작</li>
+                <li>• 데일리 데이터 모니터링 및 캠페인 최적화</li>
+                <li>• 투명한 정기 리포트를 통한 인사이트 공유</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white p-10 md:p-14 rounded-[3rem] border border-blue-100 text-center max-w-4xl mx-auto shadow-xl shadow-blue-50/50"
+        >
+          <p
+            class="text-slate-600 text-base md:text-xl leading-relaxed font-medium"
+          >
+            우리는 단순히 노출을 늘리는 팀이 아닙니다.<br class="md:hidden" />
+            고객이 브랜드에 도달하고, 이해하고,
+            <strong class="text-blue-600 font-black">'결정'</strong>하게
+            만드는<br class="hidden md:block" />
+            성공적인 마케팅 여정을
+            <span class="bg-blue-50 text-blue-600 px-2 rounded-lg"
+              >직접 설계합니다.</span
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="py-24 md:py-36 px-4 md:px-6 bg-slate-50">
+      <div class="max-w-6xl mx-auto">
+        <div class="mb-16 md:mb-24 text-center">
+          <p
+            class="text-blue-600 font-bold text-xs md:text-sm mb-6 tracking-widest uppercase"
+          >
+            Our Capabilities
+          </p>
+          <h2
+            class="text-4xl md:text-6xl font-black leading-tight text-slate-900"
+          >
+            우리가 잘하는 것들
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mb-10">
+          <div
+            class="bg-white p-10 md:p-12 rounded-[2.5rem] border border-slate-100 shadow-sm flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition-shadow"
+          >
+            <div
+              class="w-20 h-20 md:w-24 md:h-24 bg-blue-50 rounded-2xl flex items-center justify-center flex-shrink-0"
+            >
+              <svg
+                class="w-10 h-10 text-blue-600"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm10 12h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V9h2v2zm0-4h-2V5h2v2zm4 12h-2v-2h2v2zm0-4h-2v-2h2v2z"
+                />
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-2xl font-black mb-4 text-slate-900">BRAND</h4>
+              <p
+                class="text-slate-500 text-sm md:text-base leading-relaxed font-medium"
+              >
+                병의원 · 중소기업 · 서비스 브랜드 대상<br />
+                브랜딩과 퍼포먼스를 함께 고려하여 지속가능한 마케팅 전략을
+                설계합니다.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-10 md:p-12 rounded-[2.5rem] border border-slate-100 shadow-sm flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition-shadow"
+          >
+            <div
+              class="w-20 h-20 md:w-24 md:h-24 bg-blue-50 rounded-2xl flex items-center justify-center flex-shrink-0"
+            >
+              <svg
+                class="w-10 h-10 text-blue-600"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M20 4H4v2h16V4zm1 10v-2l-1-5H4l-1 5v2h1v6h10v-6h4v6h2v-6h1zm-9 4H6v-4h6v4z"
+                />
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-2xl font-black mb-4 text-slate-900">PRODUCT</h4>
+              <p
+                class="text-slate-500 text-sm md:text-base leading-relaxed font-medium"
+              >
+                상품 · 서비스 특성 기반 키워드/콘텐츠 최적화<br />
+                소비자의 의도를 파악하여 성과로 이어지는 세일즈 콘텐츠를
+                구축합니다.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-10 md:p-12 rounded-[2.5rem] border border-slate-100 shadow-sm flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition-shadow"
+          >
+            <div
+              class="w-20 h-20 md:w-24 md:h-24 bg-blue-50 rounded-2xl flex items-center justify-center flex-shrink-0"
+            >
+              <svg
+                class="w-10 h-10 text-blue-600"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"
+                />
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-2xl font-black mb-4 text-slate-900">SPREAD</h4>
+              <p
+                class="text-slate-500 text-sm md:text-base leading-relaxed font-medium"
+              >
+                Google, Naver, Meta 기반 퍼포먼스 광고<br />
+                키워드 · 디스플레이 · 리타겟팅 등 유기적인 운영으로 브랜드와
+                매출을 함께 성장시키는 미디어 믹스를 실행합니다.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-10 md:p-12 rounded-[2.5rem] border border-slate-100 shadow-sm flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition-shadow"
+          >
+            <div
+              class="w-20 h-20 md:w-24 md:h-24 bg-blue-50 rounded-2xl flex items-center justify-center flex-shrink-0"
+            >
+              <svg
+                class="w-10 h-10 text-blue-600"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"
+                />
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-2xl font-black mb-4 text-slate-900">CONTENTS</h4>
+              <p
+                class="text-slate-500 text-sm md:text-base leading-relaxed font-medium"
+              >
+                랜딩페이지 · 상세페이지 · 블로그 · 영상 콘텐츠 제작 등<br />
+                유입부터 전환까지 끌어내는 성과 중심의 크리에이티브를 기획하고
+                제작합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white p-10 md:p-14 rounded-[3rem] border-2 border-blue-600 flex flex-col md:flex-row gap-10 items-center shadow-xl shadow-blue-50"
+        >
+          <div
+            class="w-24 h-24 md:w-32 md:h-32 bg-blue-600 text-white rounded-[2rem] flex items-center justify-center flex-shrink-0"
+          >
+            <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"
+              />
+            </svg>
+          </div>
+          <div class="flex-grow text-center md:text-left">
+            <h4 class="text-2xl md:text-3xl font-black mb-4 text-slate-900">
+              DATA
+            </h4>
+            <p
+              class="text-slate-500 text-base md:text-lg leading-relaxed font-medium mb-8"
+            >
+              실시간 피드백, 월간 분석 리포트 제공<br class="hidden md:block" />
+              단순 수치 보고가 아닌 성과 개선 중심의 데이터 기반 운영을
+              지향합니다.
+            </p>
+            <a
+              href="/services"
+              class="inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-2xl font-black text-sm md:text-base hover:bg-blue-700 transition-colors shadow-lg shadow-blue-100"
+            >
+              지금 서비스 자세히 보기
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="py-16 md:py-32 px-4 md:px-6 bg-white relative overflow-hidden"
+    >
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-50/30 rounded-full blur-[120px] -z-10"
+      ></div>
+
+      <div class="max-w-4xl mx-auto text-center relative z-10">
+        <div class="mb-10 md:mb-16">
+          <h2
+            class="text-2xl md:text-5xl font-black mb-4 md:mb-6 leading-tight text-slate-900"
+          >
+            우리는
+            <span class="text-blue-600"
+              >‘당신 브랜드의 성장을 책임지는 팀’</span
+            >
+            입니다.
+          </h2>
+          <p class="text-slate-600 text-sm md:text-xl font-bold italic">
+            브랜드의 입장에서 사고하고, 성과의 관점에서 실행합니다.
+          </p>
+        </div>
+
+        <div class="space-y-6 md:space-y-8 mb-12 md:mb-20">
+          <p
+            class="text-slate-500 text-xs md:text-lg leading-relaxed font-medium"
+          >
+            화려한 말 대신, <strong class="text-slate-900">데이터</strong>로
+            이야기하고,<br class="md:hidden" />
+            감각적인 디자인보다
+            <strong class="text-slate-900">전환율 높은 콘텐츠</strong>를
+            고민합니다.
+          </p>
+
+          <div class="py-8 border-y border-slate-100">
+            <p
+              class="text-slate-900 text-base md:text-2xl font-black leading-snug"
+            >
+              그리고 무엇보다,<br />
+              고객의 브랜드를
+              <span
+                class="text-blue-600 underline underline-offset-8 decoration-blue-200"
+                >내 일처럼 대하는 팀</span
+              >이 여기 있습니다.
+            </p>
+          </div>
+
+          <p
+            class="text-slate-500 text-xs md:text-lg leading-relaxed font-medium"
+          >
+            블루커뮤니케이션즈는 단기 성과가 아닌<br class="md:hidden" />
+            <span class="text-slate-900 font-bold">장기 파트너십</span>으로 성장
+            곡선을 함께 만들어가는 대행사입니다.
+          </p>
+        </div>
+
+        <a
+          href="/contact"
+          class="inline-flex items-center gap-4 bg-blue-600 text-white px-10 py-5 md:px-14 md:py-7 rounded-2xl font-black text-base md:text-2xl shadow-2xl shadow-blue-100 hover:bg-blue-700 transition-all active:scale-95"
+        >
+          지금 블루와 함께 성장을 시작하세요
+          <svg
+            class="w-5 h-5 md:w-8 md:h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <div
+      x-show="isOpen"
+      class="fixed inset-0 z-50 flex items-end md:items-center justify-center p-0 md:p-4 bg-slate-900/80 backdrop-blur-sm"
+      x-cloak
+      x-transition.opacity
+    >
+      <div
+        class="bg-white w-full max-w-5xl rounded-t-[2rem] md:rounded-[3rem] shadow-2xl overflow-hidden max-h-[95vh] md:max-h-[90vh] overflow-y-auto relative"
+        @click.away="closeModal()"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 translate-y-full md:translate-y-10 md:scale-95"
+        x-transition:enter-end="opacity-100 translate-y-0 md:scale-100"
+      >
+        <button
+          @click="closeModal()"
+          class="absolute top-5 right-5 md:top-8 md:right-8 text-slate-400 hover:text-slate-900 z-10 p-2 bg-slate-100 rounded-full transition-colors"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+
+        <div class="p-6 md:p-12 lg:p-16">
+          <div
+            class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8 md:mb-12 border-b border-slate-100 pb-6 md:pb-10"
+          >
+            <div>
+              <span
+                class="text-blue-600 font-black text-[10px] md:text-sm uppercase tracking-widest mb-2 md:mb-3 block"
+                x-text="currentCase?.label + ' PERFORMANCE CASE'"
+              ></span>
+              <h3
+                class="text-xl md:text-3xl font-black text-slate-900 leading-tight"
+                x-text="currentCase?.caseTitle"
+              ></h3>
+            </div>
+            <div
+              class="bg-blue-600 text-white px-5 py-3 md:px-8 md:py-5 rounded-xl md:rounded-[1.5rem] font-black text-base md:text-2xl shadow-lg inline-block w-fit whitespace-nowrap"
+              x-text="currentCase?.highlight"
+            ></div>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-8 md:gap-16">
+            <div class="overflow-x-auto border-t-2 border-slate-900 rounded-lg">
+              <table class="w-full text-[11px] md:text-sm">
+                <tr class="border-b border-slate-100">
+                  <td
+                    class="bg-slate-50 p-3 md:p-5 font-bold text-slate-700 w-24 md:w-32 text-center align-middle"
+                  >
+                    업종
+                  </td>
+                  <td
+                    class="p-3 md:p-5 font-medium text-slate-900 align-middle"
+                    x-text="currentCase?.industry"
+                  ></td>
+                </tr>
+                <tr class="border-b border-slate-100">
+                  <td
+                    class="bg-slate-50 p-3 md:p-5 font-bold text-slate-700 text-center align-middle"
+                  >
+                    진행기간
+                  </td>
+                  <td
+                    class="p-3 md:p-5 text-slate-600 font-medium align-middle"
+                    x-text="currentCase?.period"
+                  ></td>
+                </tr>
+                <tr class="border-b border-slate-100">
+                  <td
+                    class="bg-slate-50 p-3 md:p-5 font-bold text-slate-700 text-center align-middle"
+                  >
+                    문제상황
+                  </td>
+                  <td
+                    class="p-3 md:p-5 text-slate-500 leading-relaxed text-[10px] md:text-xs align-middle"
+                    x-text="currentCase?.problem"
+                  ></td>
+                </tr>
+                <tr class="border-b border-slate-100">
+                  <td
+                    class="bg-slate-50 p-3 md:p-5 font-bold text-slate-700 text-center align-middle"
+                  >
+                    진행업무
+                  </td>
+                  <td class="p-3 md:p-5 text-slate-600 align-middle">
+                    <ul
+                      class="list-disc pl-4 space-y-1 md:space-y-2 text-[10px] md:text-xs font-medium text-left"
+                    >
+                      <template x-for="task in currentCase?.tasks">
+                        <li x-text="task"></li>
+                      </template>
+                    </ul>
+                  </td>
+                </tr>
+                <tr class="bg-slate-900 text-white">
+                  <td class="p-3 md:p-5 font-bold text-center align-middle">
+                    KPI
+                  </td>
+                  <td
+                    class="p-3 md:p-5 font-black text-blue-400 align-middle"
+                    x-text="currentCase?.kpi"
+                  ></td>
+                </tr>
+              </table>
+            </div>
+
+            <div
+              class="bg-slate-50 p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] border border-slate-100"
+            >
+              <div
+                class="grid grid-cols-3 gap-3 md:gap-8 h-48 md:h-64 items-end"
+              >
+                <template x-for="chart in currentCase?.chartData">
+                  <div
+                    class="flex flex-col items-center flex-1 h-full justify-end"
+                  >
+                    <div
+                      class="w-full flex items-end justify-center gap-1 md:gap-2 mb-3 md:mb-4 h-32 md:h-40"
+                    >
+                      <div
+                        class="w-4 md:w-8 bg-slate-200 rounded-t-sm md:rounded-t-lg transition-all duration-1000 relative group"
+                        :style="`height: ${chart.beforeH}%`"
+                        x-show="isChartVisible"
+                      >
+                        <span
+                          class="absolute -top-6 left-1/2 -translate-x-1/2 text-[9px] text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity"
+                          >Before</span
+                        >
+                      </div>
+                      <div
+                        class="w-4 md:w-8 bg-blue-600 rounded-t-sm md:rounded-t-lg transition-all duration-1000 delay-300 relative group"
+                        :style="`height: ${chart.afterH}%`"
+                        x-show="isChartVisible"
+                      >
+                        <span
+                          class="absolute -top-6 left-1/2 -translate-x-1/2 text-[9px] text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity"
+                          >After</span
+                        >
+                      </div>
+                    </div>
+                    <div class="text-center">
+                      <p
+                        class="text-[8px] md:text-[10px] text-slate-400 font-bold mb-1"
+                        x-text="chart.beforeVal"
+                      ></p>
+                      <div
+                        :class="chart.isUp ? 'text-red-500' : 'text-blue-600'"
+                        class="text-[10px] md:text-sm font-black mb-1 md:mb-2 flex items-center justify-center gap-0.5"
+                      >
+                        <span x-text="chart.isUp ? '▲' : '▼'"></span>
+                        <span x-text="chart.afterVal"></span>
+                      </div>
+                      <p
+                        class="text-[9px] md:text-[11px] font-black text-slate-600 uppercase tracking-wider"
+                        x-text="chart.label"
+                      ></p>
+                    </div>
+                  </div>
+                </template>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script>
-        function portfolioApp() {
-            return {
-                isOpen: false,
-                isChartVisible: false,
-                currentCase: null,
-                cases: [
-                    {
-                        id: 'sales', label: '매출', subLabel: '실질적인 매출 증대', preview: 'ROAS 820% 달성',
-                        icon: '<path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>',
-                        caseTitle: 'E-커머스 D 브랜드 매출 최적화 전략', highlight: 'ROAS 820% 달성', industry: '의류 쇼핑몰', period: '2023.10 ~ 현재',
-                        problem: '고단가 품목의 낮은 전환율 및 광고비 효율 저하', kpi: 'ROAS 700% 이상 / 월 매출 2억',
-                        tasks: ['리타겟팅 오디언스 세분화', '랜딩 페이지 전환 동선 개선', '고효율 상품 예산 집중 배치'],
-                        chartData: [
-                            { label: 'ROAS', beforeVal: '320%', afterVal: '820%', beforeH: 40, afterH: 100, isUp: true },
-                            { label: '매출', beforeVal: '0.5억', afterVal: '2.1억', beforeH: 25, afterH: 95, isUp: true },
-                            { label: 'CVR', beforeVal: '0.8%', afterVal: '2.4%', beforeH: 30, afterH: 90, isUp: true }
-                        ]
-                    },
-                    {
-                        id: 'cvr', label: '전환', subLabel: '높은 전환율 달성', preview: '전환율 2.4배 상승',
-                        icon: '<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>',
-                        caseTitle: '뷰티 S 브랜드 CVR 극대화 프로젝트', highlight: '전환율 3.1% 달성', industry: '코스메틱', period: '2024.01 ~ 2024.06',
-                        problem: '높은 유입 대비 낮은 상세페이지 구매 전환율', kpi: 'CVR 1.2% → 3.0% 목표',
-                        tasks: ['상세페이지 A/B 테스트', '구매 여정 단축 및 결제 허들 제거', '고객 리뷰 기반 신뢰 콘텐츠 강화'],
-                        chartData: [
-                            { label: 'CVR', beforeVal: '1.3%', afterVal: '3.1%', beforeH: 42, afterH: 100, isUp: true },
-                            { label: 'CPC', beforeVal: '800원', afterVal: '420원', beforeH: 95, afterH: 50, isUp: false },
-                            { label: '이탈률', beforeVal: '78%', afterVal: '45%', beforeH: 90, afterH: 52, isUp: false }
-                        ]
-                    },
-                    {
-                        id: 'traffic', label: '유입', subLabel: '타겟 고객 유입 확대', preview: 'CPC 45% 절감',
-                        icon: '<path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>',
-                        caseTitle: '라이프스타일 브랜드 타겟 유입 최적화', highlight: 'CPC 45% 절감', industry: '인테리어 소품', period: '2023.12 ~ 현재',
-                        problem: '범용 키워드 사용으로 인한 타겟 불일치 및 비용 낭비', kpi: 'CPC 300원 이하 / 방문자 3배 증가',
-                        tasks: ['구매 고객 페르소나 정밀 타겟팅', '관여도 기반 키워드 믹스 재구성', '메타/GFA 채널 최적화'],
-                        chartData: [
-                            { label: 'CPC', beforeVal: '620원', afterVal: '280원', beforeH: 100, afterH: 45, isUp: false },
-                            { label: '유입량', beforeVal: '1.2만', afterVal: '4.5만', beforeH: 27, afterH: 100, isUp: true },
-                            { label: 'CTR', beforeVal: '0.8%', afterVal: '2.4%', beforeH: 33, afterH: 100, isUp: true }
-                        ]
-                    },
-                    {
-                        id: 'inquiry', label: '문의', subLabel: '실질적인 상담 증가', preview: 'DB 유입 3.5배 증가',
-                        icon: '<path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>',
-                        caseTitle: 'P 치킨 브랜드 가맹 상담 DB 최적화', highlight: 'ROAS 470% 증가', industry: 'P 치킨 프랜차이즈', period: '2023.07 ~ 현재',
-                        problem: '구분되지 않는 캠페인 운영 및 타겟팅 부재로 인한 DB 단가 상승', 
-                        kpi: '월 DB 500개 이상 / CPA 3만원 이하',
-                        tasks: ['지역/시간대별 정밀 타겟팅 설정', '매체 특성에 맞는 신규 소재 제작', 'DB 유입 경로 최적화 및 누수 차단'],
-                        chartData: [
-                            { label: 'CVR', beforeVal: '1.04%', afterVal: '3.58%', beforeH: 29, afterH: 100, isUp: true },
-                            { label: 'CPA', beforeVal: '3.2만', afterVal: '1.9만', beforeH: 100, afterH: 60, isUp: false },
-                            { label: 'Monthly DB', beforeVal: '210건', afterVal: '737건', beforeH: 28, afterH: 100, isUp: true }
-                        ]
-                    }
-                ],
-                openModal(item) {
-                    this.currentCase = item;
-                    this.isOpen = true;
-                    setTimeout(() => {
-                        this.isChartVisible = true;
-                    }, 300);
+      function portfolioApp() {
+        return {
+          isOpen: false,
+          isChartVisible: false,
+          currentCase: null,
+          cases: [
+            // 다른 카드들 (매출, 전환, 유입)은 여기에 추가...
+            {
+              id: "sales",
+              label: "매출",
+              subLabel: "실질적인 매출 증대",
+              preview: "ROAS 820% 달성",
+              icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>',
+              caseTitle: "E-커머스 D 브랜드 매출 최적화 전략",
+              highlight: "ROAS 820% 달성",
+              industry: "의류 쇼핑몰",
+              period: "2023.10 ~ 현재",
+              problem: "고단가 품목의 낮은 전환율 및 광고 효율 저하",
+              kpi: "ROAS 700% 이상 / 월 매출 2억",
+              tasks: [
+                "리타겟팅 오디언스 세분화",
+                "랜딩 페이지 전환 최적화",
+                "고효율 상품군 예산 집중",
+              ],
+              chartData: [
+                {
+                  label: "ROAS",
+                  beforeVal: "320%",
+                  afterVal: "820%",
+                  beforeH: 40,
+                  afterH: 100,
+                  isUp: true,
                 },
-                closeModal() {
-                    this.isOpen = false;
-                    this.isChartVisible = false;
-                }
-            }
-        }
+                {
+                  label: "SALES",
+                  beforeVal: "0.5억",
+                  afterVal: "2.1억",
+                  beforeH: 25,
+                  afterH: 95,
+                  isUp: true,
+                },
+                {
+                  label: "CVR",
+                  beforeVal: "0.8%",
+                  afterVal: "2.4%",
+                  beforeH: 33,
+                  afterH: 100,
+                  isUp: true,
+                },
+              ],
+            },
+            {
+              id: "cvr",
+              label: "전환",
+              subLabel: "높은 전환율 달성",
+              preview: "전환율 2.4배 상승",
+              icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>',
+              caseTitle: "뷰티 S 브랜드 CVR 극대화 프로젝트",
+              highlight: "전환율 3.1% 달성",
+              industry: "코스메틱",
+              period: "2024.01 ~ 2024.06",
+              problem: "높은 유입 대비 상세페이지 구매 전환율 정체",
+              kpi: "CVR 1.2% → 3.0% 목표",
+              tasks: [
+                "상세페이지 A/B 테스트",
+                "구매 여정 단축 설계",
+                "고객 리뷰 기반 콘텐츠 보강",
+              ],
+              chartData: [
+                {
+                  label: "CVR",
+                  beforeVal: "1.3%",
+                  afterVal: "3.1%",
+                  beforeH: 42,
+                  afterH: 100,
+                  isUp: true,
+                },
+                {
+                  label: "CPC",
+                  beforeVal: "800원",
+                  afterVal: "420원",
+                  beforeH: 100,
+                  afterH: 52,
+                  isUp: false,
+                },
+                {
+                  label: "BOUNCE",
+                  beforeVal: "78%",
+                  afterVal: "45%",
+                  beforeH: 100,
+                  afterH: 58,
+                  isUp: false,
+                },
+              ],
+            },
+            {
+              id: "traffic",
+              label: "유입",
+              subLabel: "타겟 고객 유입 확대",
+              preview: "CPC 45% 절감",
+              icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>',
+              caseTitle: "라이프스타일 브랜드 타겟 유입 최적화",
+              highlight: "CPC 45% 절감",
+              industry: "인테리어 소품",
+              period: "2023.12 ~ 현재",
+              problem: "범용 키워드 사용으로 인한 낮은 타겟 적합도",
+              kpi: "CPC 300원 이하 유지",
+              tasks: [
+                "잠재 고객 페르소나 정밀 타겟팅",
+                "관여도 기반 키워드 믹스 구성",
+                "매체별 노출 영역 최적화",
+              ],
+              chartData: [
+                {
+                  label: "CPC",
+                  beforeVal: "620원",
+                  afterVal: "280원",
+                  beforeH: 100,
+                  afterH: 45,
+                  isUp: false,
+                },
+                {
+                  label: "TRAFFIC",
+                  beforeVal: "1.2만",
+                  afterVal: "4.5만",
+                  beforeH: 27,
+                  afterH: 100,
+                  isUp: true,
+                },
+                {
+                  label: "CTR",
+                  beforeVal: "0.8%",
+                  afterVal: "2.4%",
+                  beforeH: 33,
+                  afterH: 100,
+                  isUp: true,
+                },
+              ],
+            },
+            // P치킨 문의 사례 (실제 데이터 반영)
+            {
+              id: "inquiry",
+              label: "문의",
+              subLabel: "실질적인 상담 증가",
+              preview: "DB 유입 3.5배 증가",
+              icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>',
+              caseTitle: "P 치킨 브랜드 가맹 상담 DB 최적화",
+              highlight: "ROAS 470% 증가",
+              industry: "P 치킨 프랜차이즈",
+              period: "2023.07 ~ 현재",
+              problem:
+                "구분되지 않는 캠페인 운영 및 타겟팅 부재로 인한 DB 단가 상승",
+              kpi: "월 DB 500개 이상 / CPA 3만원 이하",
+              tasks: [
+                "지역/시간대별 정밀 타겟팅 설정",
+                "매체 특성에 맞는 신규 소재 제작",
+                "DB 유입 경로 최적화 및 누수 차단",
+              ],
+              chartData: [
+                {
+                  label: "CVR",
+                  beforeVal: "1.04%",
+                  afterVal: "3.58%",
+                  beforeH: 29,
+                  afterH: 100,
+                  isUp: true,
+                },
+                {
+                  label: "CPA",
+                  beforeVal: "3.2만",
+                  afterVal: "1.9만",
+                  beforeH: 100,
+                  afterH: 60,
+                  isUp: false,
+                },
+                {
+                  label: "MONTHLY DB",
+                  beforeVal: "210건",
+                  afterVal: "737건",
+                  beforeH: 28,
+                  afterH: 100,
+                  isUp: true,
+                },
+              ],
+            },
+          ],
+          openModal(item) {
+            this.currentCase = item;
+            this.isOpen = true;
+            setTimeout(() => {
+              this.isChartVisible = true;
+            }, 300);
+          },
+          closeModal() {
+            this.isOpen = false;
+            this.isChartVisible = false;
+          },
+        };
+      }
     </script>
-</body>
+  </body>
 </html>
