@@ -51,102 +51,6 @@
       </p>
 
       <h1
-        class="text-3xl md:text-6xl font-black mb-4 md:mb-6 leading-tight text-slate-900"
-      >
-        마케팅, 누구나 합니다.
-      </h1>
-      <h2
-        class="text-3xl md:text-6xl font-black mb-12 md:mb-20 leading-tight text-slate-900"
-      >
-        하지만 <span class="text-blue-600">'성과'</span>는 아무나 못 냅니다.
-      </h2>
-
-      <div class="max-w-3xl mx-auto mb-14">
-        <p
-          class="text-slate-500 text-sm md:text-base font-medium leading-relaxed"
-        >
-          우리는 '브랜딩'이라는 말로 책임을 회피하지 않습니다.<br
-            class="hidden md:block"
-          />
-          매출, 전환, 유입, 재방문, 고객문의 숫자로 증명되는 결과를 위해, 끝까지
-          뛰는 팀.
-        </p>
-      </div>
-
-      <div
-        class="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 relative z-10"
-      >
-        <template x-for="item in cases" :key="item.id">
-          <button
-            @click="openModal(item)"
-            class="hero-card bg-white p-6 md:p-8 rounded-[2rem] border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] text-center group relative overflow-hidden flex flex-col items-center justify-between min-h-[240px] md:min-h-[340px]"
-          >
-            <div
-              class="flex flex-col items-center w-full flex-grow justify-center"
-            >
-              <div
-                class="w-12 h-12 md:w-16 md:h-16 bg-slate-50 rounded-2xl flex items-center justify-center mb-5 md:mb-6 group-hover:bg-blue-600 transition-colors"
-              >
-                <svg
-                  class="w-6 h-6 md:w-8 md:h-8 text-blue-600 group-hover:text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  x-html="item.icon"
-                ></svg>
-              </div>
-              <h3
-                class="text-base md:text-xl font-black mb-2 group-hover:text-blue-600 transition-colors"
-                x-text="item.label"
-              ></h3>
-              <p
-                class="text-[10px] md:text-xs text-slate-400 font-medium mb-4 md:mb-6"
-                x-text="item.subLabel"
-              ></p>
-              <div class="py-3 md:py-4 border-t border-slate-50 w-full">
-                <span
-                  class="text-xs md:text-base font-black text-blue-600 italic"
-                  x-text="item.preview"
-                ></span>
-              </div>
-            </div>
-
-            <div
-              class="cta-btn w-full py-3 rounded-xl bg-slate-50 text-slate-500 text-[10px] md:text-xs font-bold border border-slate-100 transition-all flex items-center justify-center gap-1.5 mt-4"
-            >
-              <span>성공 사례 확인하기</span>
-              <svg
-                class="w-3 h-3 md:w-3.5 md:h-3.5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                ></path>
-              </svg>
-            </div>
-          </button>
-        </template>
-      </div>
-    </section>
-    <section
-      class="pt-20 pb-16 md:pt-28 md:pb-24 px-4 md:px-6 text-center relative overflow-hidden"
-    >
-      <div
-        class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-50/50 rounded-full blur-3xl -z-10 opacity-60 pointer-events-none"
-      ></div>
-
-      <p
-        class="text-blue-600 font-bold text-xs md:text-sm mb-4 tracking-widest uppercase"
-      >
-        Results-driven performance
-      </p>
-
-      <h1
         class="text-[26px] md:text-6xl font-black mb-4 md:mb-6 leading-tight text-slate-900 break-keep"
       >
         마케팅, 누구나 합니다.
@@ -235,123 +139,7 @@
         </template>
       </div>
     </section>
-    <section class="py-16 md:py-24 px-4 md:px-6 bg-slate-50 relative">
-      <div class="max-w-6xl mx-auto relative z-10">
-        <div class="text-center mb-12 md:mb-16">
-          <h2 class="text-2xl md:text-3xl font-black mb-3 text-slate-900">
-            성과를 냈더니 따라온 것들,<br class="md:hidden" />
-            블루의 <span class="text-blue-600">진짜 자산</span>입니다.
-          </h2>
-          <p class="text-slate-500 text-xs md:text-sm font-medium">
-            압도적인 수치는 견고한 파트너십과 실전 경험으로 증명됩니다.
-          </p>
-        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          <div
-            class="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-slate-100 flex flex-col items-start hover:shadow-md transition-shadow"
-          >
-            <div
-              class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6"
-            >
-              <svg
-                class="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                ></path>
-              </svg>
-            </div>
-            <h3
-              class="text-xl md:text-2xl font-black mb-3 md:mb-4 text-slate-900"
-            >
-              7년 이상<br />장기 파트너십 유지
-            </h3>
-            <p
-              class="text-slate-500 text-xs md:text-sm leading-relaxed font-medium"
-            >
-              반짝하는 ROAS는 누구나 만들 수 있습니다.<br />하지만 7년이 넘는
-              시간 동안 변함없는 신뢰를 유지하는 것은 오직 '본질'을 아는 팀만이
-              가능합니다.
-            </p>
-          </div>
-
-          <div
-            class="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-slate-100 flex flex-col items-start hover:shadow-md transition-shadow"
-          >
-            <div
-              class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6"
-            >
-              <svg
-                class="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                ></path>
-              </svg>
-            </div>
-            <h3
-              class="text-xl md:text-2xl font-black mb-3 md:mb-4 text-slate-900"
-            >
-              영업 인력 0명<br />입소문으로 증명된 성장
-            </h3>
-            <p
-              class="text-slate-500 text-xs md:text-sm leading-relaxed font-medium"
-            >
-              우리는 제안서를 무작위로 뿌리지 않습니다.<br />우리가 만들어낸
-              압도적인 성과를 직접 경험한 파트너사들의 강력한 추천이 블루의
-              유일한 영업 사원입니다.
-            </p>
-          </div>
-
-          <div
-            class="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-slate-100 flex flex-col items-start hover:shadow-md transition-shadow"
-          >
-            <div
-              class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6"
-            >
-              <svg
-                class="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-                ></path>
-              </svg>
-            </div>
-            <h3
-              class="text-xl md:text-2xl font-black mb-3 md:mb-4 text-slate-900"
-            >
-              자사 가구 브랜드<br />런칭 6개월 매출 5억
-            </h3>
-            <p
-              class="text-slate-500 text-xs md:text-sm leading-relaxed font-medium"
-            >
-              남의 돈으로 대행만 하는 팀은 모릅니다.<br />직접 내 돈을 써가며
-              비즈니스의 '틈'을 발견하고 매출로 연결해본 실전 경험이 우리의 가장
-              날카로운 무기입니다.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
     <section
       class="py-16 md:py-24 px-4 md:px-6 bg-slate-50 relative"
       x-data="{ activeAsset: 0 }"
@@ -609,140 +397,7 @@
         </div>
       </div>
     </section>
-    <section class="py-20 md:py-32 px-4 md:px-6 bg-white">
-      <div class="max-w-6xl mx-auto">
-        <div class="mb-12 md:mb-20 text-left">
-          <p
-            class="text-blue-600 font-bold text-xs md:text-sm mb-4 tracking-widest uppercase"
-          >
-            How We Work
-          </p>
-          <h2
-            class="text-3xl md:text-5xl font-black mb-4 md:mb-6 leading-tight text-slate-900"
-          >
-            압도적인 실행력은 기본입니다.
-          </h2>
-          <h3
-            class="text-3xl md:text-5xl font-black mb-12 md:mb-20 leading-tight text-slate-900"
-          >
-            더 높은 성과를 위해 <br class="md:hidden" />
-            <span class="text-blue-600">비즈니스의 본질</span>을 들여다봅니다.
-          </h3>
-        </div>
 
-        <div
-          class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-start"
-        >
-          <div class="md:col-span-7 space-y-8">
-            <p
-              class="text-slate-600 text-base md:text-lg leading-relaxed font-medium"
-            >
-              광고 대행사의 가장 큰 가치는 파트너사가 비즈니스에만 전념할 수
-              있게 돕는 것입니다. 우리는 당신의 귀한
-              <strong class="text-slate-900">시간을 아끼기 위해</strong> 복잡한
-              매체 운영부터 데이터 분석, 리포트 작성까지 모든 실무를 숙련된
-              노하우로 책임지고 수행합니다.
-            </p>
-            <p
-              class="text-slate-600 text-base md:text-lg leading-relaxed font-medium"
-            >
-              하지만 블루커뮤니케이션즈는 단순 운영에 머무르지 않습니다.
-              광고비의 한계를 넘어 더 높은 성과를 내기 위해서는, 결국 광고 세팅
-              이면의
-              <strong class="text-blue-600">비즈니스 구조와 제품의 본질</strong
-              >을 이해해야 하기 때문입니다. 이것이 우리가 비즈니스 자체에
-              몰입하는 진짜 이유입니다.
-            </p>
-          </div>
-
-          <div
-            class="md:col-span-5 bg-slate-50 p-8 md:p-10 rounded-[2.5rem] border border-slate-100"
-          >
-            <p class="text-slate-700 text-lg font-bold mb-6">
-              전략적 파트너가 되는 과정
-            </p>
-
-            <div class="space-y-6">
-              <div class="flex items-center gap-5">
-                <div
-                  class="flex-shrink-0 w-12 h-12 bg-white border border-slate-200 text-slate-400 rounded-full flex items-center justify-center text-xs font-black italic shadow-sm"
-                >
-                  Step 1
-                </div>
-                <p
-                  class="text-sm md:text-base font-bold text-slate-700 leading-tight"
-                >
-                  전문 운영을 통한<br />파트너사 리소스 확보
-                </p>
-              </div>
-
-              <div class="ml-6 w-px h-8 bg-slate-200"></div>
-
-              <div class="flex items-center gap-5">
-                <div
-                  class="flex-shrink-0 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-black italic shadow-xl shadow-blue-100"
-                >
-                  Step 2
-                </div>
-                <p
-                  class="text-sm md:text-base font-bold text-blue-600 leading-tight"
-                >
-                  비즈니스 본질 분석을 통한<br />성과 한계 돌파
-                </p>
-              </div>
-            </div>
-
-            <div class="mt-10 pt-8 border-t border-slate-200">
-              <p
-                class="text-xs md:text-sm text-slate-500 leading-relaxed font-medium"
-              >
-                7년의 신뢰는 실무의 정교함과 비즈니스를 꿰뚫는 통찰이 만날 때
-                만들어졌습니다.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="mt-20 md:mt-32 pt-12 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-10"
-        >
-          <div class="text-center md:text-left">
-            <p
-              class="text-slate-400 text-xs font-bold mb-3 uppercase tracking-tighter"
-            >
-              The Logic of Growth
-            </p>
-            <p
-              class="text-slate-900 font-bold text-xl md:text-2xl leading-tight"
-            >
-              직접 브랜드를 성공시키며 발견한<br />
-              <span class="text-blue-600">‘성장의 결정적 실마리’</span>를
-              공유합니다.
-            </p>
-          </div>
-
-          <a
-            href="/"
-            class="group bg-blue-600 text-white px-10 py-6 rounded-2xl font-black text-base md:text-lg shadow-2xl shadow-blue-200 hover:bg-blue-700 transition-all flex items-center gap-4"
-          >
-            지금 왜 ‘블루’와 일해야 할까요?
-            <svg
-              class="w-6 h-6 group-hover:translate-x-1 transition-transform"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              ></path>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </section>
     <section
       class="py-20 md:py-32 px-4 md:px-6 bg-white"
       x-data="{ activeStep: 1 }"
@@ -936,107 +591,7 @@
         </div>
       </div>
     </section>
-    <section class="py-24 md:py-36 px-4 md:px-6 bg-slate-50">
-      <div class="max-w-6xl mx-auto">
-        <div class="mb-20 md:mb-28 text-center">
-          <p
-            class="text-blue-600 font-bold text-xs md:text-sm mb-6 tracking-widest uppercase text-center"
-          >
-            Custom Strategy Design
-          </p>
-          <h2
-            class="text-3xl md:text-5xl font-black mb-4 md:mb-6 leading-tight text-slate-900 text-center"
-          >
-            정해진 패키지는 없습니다.
-          </h2>
-          <h3
-            class="text-3xl md:text-5xl font-black mb-12 md:mb-20 leading-tight text-slate-900 text-center"
-          >
-            비즈니스 구조에 맞는 <br class="md:hidden" />
-            <span class="text-blue-600">'최적의 조합'</span>을 설계합니다.
-          </h3>
-          <p class="text-slate-500 text-sm md:text-lg font-medium">
-            시장 포지셔닝부터 타겟의 구매 여정까지, 승률 높은 매체를 조합합니다.
-          </p>
-        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-          <div
-            class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100 relative group"
-          >
-            <span
-              class="text-6xl font-black text-slate-50 absolute right-8 top-8"
-              >01</span
-            >
-            <div class="relative z-10">
-              <h3 class="text-xl font-black mb-6 text-slate-900">
-                비즈니스 및 시장 진단
-              </h3>
-              <ul class="space-y-4 text-sm text-slate-500 font-medium">
-                <li>• 시장 내 브랜드 포지셔닝 및 경쟁 우위 점검</li>
-                <li>• 데이터 기반의 제품 핵심 소구점(USP) 도출</li>
-                <li>• 기존 마케팅의 성과 정체 원인 정밀 분석</li>
-              </ul>
-            </div>
-          </div>
-
-          <div
-            class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100 relative group"
-          >
-            <span
-              class="text-6xl font-black text-slate-50 absolute right-8 top-8"
-              >02</span
-            >
-            <div class="relative z-10">
-              <h3 class="text-xl font-black mb-6 text-slate-900">
-                전략적 믹스 설계
-              </h3>
-              <ul class="space-y-4 text-sm text-slate-500 font-medium">
-                <li>• IMC 기반의 SA, DA 매체 최적 배분</li>
-                <li>• '스카이트리거' 등 블루만의 독자 매체 활용</li>
-                <li>• 타겟 구매 결정 요인을 반영한 메시지 설계</li>
-              </ul>
-            </div>
-          </div>
-
-          <div
-            class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100 relative group"
-          >
-            <span
-              class="text-6xl font-black text-slate-50 absolute right-8 top-8"
-              >03</span
-            >
-            <div class="relative z-10">
-              <h3 class="text-xl font-black mb-6 text-slate-900">
-                정밀 실행 및 성과 관리
-              </h3>
-              <ul class="space-y-4 text-sm text-slate-500 font-medium">
-                <li>• 고객 반응을 이끌어내는 고효율 소재 제작</li>
-                <li>• 데일리 데이터 모니터링 및 캠페인 최적화</li>
-                <li>• 투명한 정기 리포트를 통한 인사이트 공유</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="bg-white p-10 md:p-14 rounded-[3rem] border border-blue-100 text-center max-w-4xl mx-auto shadow-xl shadow-blue-50/50"
-        >
-          <p
-            class="text-slate-600 text-base md:text-xl leading-relaxed font-medium"
-          >
-            우리는 단순히 노출을 늘리는 팀이 아닙니다.<br class="md:hidden" />
-            고객이 브랜드에 도달하고, 이해하고,
-            <strong class="text-blue-600 font-black">'결정'</strong>하게
-            만드는<br class="hidden md:block" />
-            성공적인 마케팅 여정을
-            <span class="bg-blue-50 text-blue-600 px-2 rounded-lg"
-              >직접 설계합니다.</span
-            >
-          </p>
-        </div>
-      </div>
-    </section>
     <section
       class="py-24 md:py-36 px-4 md:px-6 bg-slate-50"
       x-data="{ activeStrategy: 1 }"
@@ -1246,181 +801,7 @@
         </div>
       </div>
     </section>
-    <section class="py-24 md:py-36 px-4 md:px-6 bg-slate-50">
-      <div class="max-w-6xl mx-auto">
-        <div class="mb-16 md:mb-24 text-center">
-          <p
-            class="text-blue-600 font-bold text-xs md:text-sm mb-6 tracking-widest uppercase"
-          >
-            Our Capabilities
-          </p>
-          <h2
-            class="text-4xl md:text-6xl font-black leading-tight text-slate-900"
-          >
-            우리가 잘하는 것들
-          </h2>
-        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mb-10">
-          <div
-            class="bg-white p-10 md:p-12 rounded-[2.5rem] border border-slate-100 shadow-sm flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition-shadow"
-          >
-            <div
-              class="w-20 h-20 md:w-24 md:h-24 bg-blue-50 rounded-2xl flex items-center justify-center flex-shrink-0"
-            >
-              <svg
-                class="w-10 h-10 text-blue-600"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm10 12h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V9h2v2zm0-4h-2V5h2v2zm4 12h-2v-2h2v2zm0-4h-2v-2h2v2z"
-                />
-              </svg>
-            </div>
-            <div>
-              <h4 class="text-2xl font-black mb-4 text-slate-900">BRAND</h4>
-              <p
-                class="text-slate-500 text-sm md:text-base leading-relaxed font-medium"
-              >
-                병의원 · 중소기업 · 서비스 브랜드 대상<br />
-                브랜딩과 퍼포먼스를 함께 고려하여 지속가능한 마케팅 전략을
-                설계합니다.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="bg-white p-10 md:p-12 rounded-[2.5rem] border border-slate-100 shadow-sm flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition-shadow"
-          >
-            <div
-              class="w-20 h-20 md:w-24 md:h-24 bg-blue-50 rounded-2xl flex items-center justify-center flex-shrink-0"
-            >
-              <svg
-                class="w-10 h-10 text-blue-600"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M20 4H4v2h16V4zm1 10v-2l-1-5H4l-1 5v2h1v6h10v-6h4v6h2v-6h1zm-9 4H6v-4h6v4z"
-                />
-              </svg>
-            </div>
-            <div>
-              <h4 class="text-2xl font-black mb-4 text-slate-900">PRODUCT</h4>
-              <p
-                class="text-slate-500 text-sm md:text-base leading-relaxed font-medium"
-              >
-                상품 · 서비스 특성 기반 키워드/콘텐츠 최적화<br />
-                소비자의 의도를 파악하여 성과로 이어지는 세일즈 콘텐츠를
-                구축합니다.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="bg-white p-10 md:p-12 rounded-[2.5rem] border border-slate-100 shadow-sm flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition-shadow"
-          >
-            <div
-              class="w-20 h-20 md:w-24 md:h-24 bg-blue-50 rounded-2xl flex items-center justify-center flex-shrink-0"
-            >
-              <svg
-                class="w-10 h-10 text-blue-600"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"
-                />
-              </svg>
-            </div>
-            <div>
-              <h4 class="text-2xl font-black mb-4 text-slate-900">SPREAD</h4>
-              <p
-                class="text-slate-500 text-sm md:text-base leading-relaxed font-medium"
-              >
-                Google, Naver, Meta 기반 퍼포먼스 광고<br />
-                키워드 · 디스플레이 · 리타겟팅 등 유기적인 운영으로 브랜드와
-                매출을 함께 성장시키는 미디어 믹스를 실행합니다.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="bg-white p-10 md:p-12 rounded-[2.5rem] border border-slate-100 shadow-sm flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition-shadow"
-          >
-            <div
-              class="w-20 h-20 md:w-24 md:h-24 bg-blue-50 rounded-2xl flex items-center justify-center flex-shrink-0"
-            >
-              <svg
-                class="w-10 h-10 text-blue-600"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"
-                />
-              </svg>
-            </div>
-            <div>
-              <h4 class="text-2xl font-black mb-4 text-slate-900">CONTENTS</h4>
-              <p
-                class="text-slate-500 text-sm md:text-base leading-relaxed font-medium"
-              >
-                랜딩페이지 · 상세페이지 · 블로그 · 영상 콘텐츠 제작 등<br />
-                유입부터 전환까지 끌어내는 성과 중심의 크리에이티브를 기획하고
-                제작합니다.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="bg-white p-10 md:p-14 rounded-[3rem] border-2 border-blue-600 flex flex-col md:flex-row gap-10 items-center shadow-xl shadow-blue-50"
-        >
-          <div
-            class="w-24 h-24 md:w-32 md:h-32 bg-blue-600 text-white rounded-[2rem] flex items-center justify-center flex-shrink-0"
-          >
-            <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"
-              />
-            </svg>
-          </div>
-          <div class="flex-grow text-center md:text-left">
-            <h4 class="text-2xl md:text-3xl font-black mb-4 text-slate-900">
-              DATA
-            </h4>
-            <p
-              class="text-slate-500 text-base md:text-lg leading-relaxed font-medium mb-8"
-            >
-              실시간 피드백, 월간 분석 리포트 제공<br class="hidden md:block" />
-              단순 수치 보고가 아닌 성과 개선 중심의 데이터 기반 운영을
-              지향합니다.
-            </p>
-            <a
-              href="/services"
-              class="inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-2xl font-black text-sm md:text-base hover:bg-blue-700 transition-colors shadow-lg shadow-blue-100"
-            >
-              지금 서비스 자세히 보기
-              <svg
-                class="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                ></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
     <section
       class="py-24 md:py-36 px-4 md:px-6 bg-white"
       x-data="{ activeTab: 'brand' }"
@@ -1524,20 +905,20 @@
           </div>
         </div>
 
-        <div class="md:hidden mb-10">
+        <div class="md:hidden mb-10 px-1">
           <div class="grid grid-cols-4 gap-1.5 mb-6">
             <template x-for="tab in ['BRAND', 'PRODUCT', 'SPREAD', 'CONTENTS']">
               <button
                 @click="activeTab = tab.toLowerCase()"
                 :class="activeTab === tab.toLowerCase() ? 'bg-blue-600 text-white shadow-md border-blue-600' : 'bg-slate-50 text-slate-400 border-slate-100'"
-                class="py-3.5 rounded-xl text-[10px] font-black uppercase tracking-tighter transition-all border text-center"
+                class="py-3 rounded-xl text-[9px] font-black uppercase tracking-tighter transition-all border text-center"
                 x-text="tab"
               ></button>
             </template>
           </div>
 
           <div
-            class="bg-slate-50 p-8 rounded-[2.5rem] border border-slate-100 min-h-[300px] flex flex-col items-center justify-center text-center"
+            class="bg-slate-50 p-8 rounded-[2.5rem] border border-slate-100 min-h-[320px] flex flex-col items-center justify-center text-center"
           >
             <div x-show="activeTab === 'brand'" x-transition class="space-y-5">
               <div
@@ -1553,8 +934,8 @@
               <p
                 class="text-slate-600 text-sm leading-relaxed font-medium break-keep"
               >
-                병의원 · 중소기업 · 서비스 브랜드 대상<br />지속가능한 마케팅
-                전략을 설계합니다.
+                병의원 · 중소기업 · 서비스 브랜드 대상<br />브랜딩과 퍼포먼스를
+                함께 고려하여 지속가능한 마케팅 전략을 설계합니다.
               </p>
             </div>
             <div
@@ -1575,8 +956,8 @@
               <p
                 class="text-slate-600 text-sm leading-relaxed font-medium break-keep"
               >
-                소비자의 의도를 파악하여 성과로 이어지는<br />세일즈 콘텐츠를
-                구축합니다.
+                상품 · 서비스 특성 기반 키워드/콘텐츠 최적화<br />소비자의
+                의도를 파악하여 성과로 이어지는 세일즈 콘텐츠를 구축합니다.
               </p>
             </div>
             <div x-show="activeTab === 'spread'" x-transition class="space-y-5">
@@ -1593,7 +974,8 @@
               <p
                 class="text-slate-600 text-sm leading-relaxed font-medium break-keep"
               >
-                매체 기반 광고의 유기적인 운영으로<br />브랜드와 매출을 함께
+                Google, Naver, Meta 기반 퍼포먼스 광고<br />키워드 · 디스플레이
+                · 리타겟팅 등 유기적인 운영으로 브랜드와 매출을 함께
                 성장시킵니다.
               </p>
             </div>
@@ -1615,7 +997,8 @@
               <p
                 class="text-slate-600 text-sm leading-relaxed font-medium break-keep"
               >
-                유입부터 전환까지 끌어내는<br />성과 중심의 크리에이티브를
+                랜딩페이지 · 상세페이지 · 블로그 · 영상 콘텐츠 제작 등 유입부터
+                전환까지 끌어내는 성과 중심의 크리에이티브를 기획하고
                 제작합니다.
               </p>
             </div>
